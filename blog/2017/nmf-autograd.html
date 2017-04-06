@@ -133,14 +133,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
@@ -173,11 +173,8 @@ div#notebook {
 <body>
 <nav id="nav">
         <ul class="container">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../publications.html">Publications</a></li>
-            <li><a href="../../blog.html">Blog</a></li>
-            <li><a href="../../files/cv.pdf">CV</a></li>
-
+            <li><a href="http://www.cs.virginia.edu/~nb2cz/">Website/a></li>
+            <li><a href="../../index.html">Blog Home</a></li>
         </ul>
     </nav>
 
@@ -396,14 +393,14 @@ div#notebook {
 <span class="n">W</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rank</span><span class="p">))</span>
 <span class="k">print</span> <span class="s2">&quot;Iteration, Cost&quot;</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
-
+    
     <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">1000</span>==0:
         <span class="k">print</span> <span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="mi">20</span>
         <span class="k">print</span> <span class="n">i</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">cost</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
     <span class="n">del_W</span><span class="p">,</span> <span class="n">del_H</span> <span class="o">=</span> <span class="n">grad_cost</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
     <span class="n">W</span> <span class="o">=</span>  <span class="n">W</span><span class="o">-</span><span class="n">del_W</span><span class="o">*</span><span class="n">learning_rate</span>
     <span class="n">H</span> <span class="o">=</span>  <span class="n">H</span><span class="o">-</span><span class="n">del_H</span><span class="o">*</span><span class="n">learning_rate</span>
-
+    
     <span class="c1"># Ensuring that W, H remain non-negative. This is also called projected gradient descent</span>
     <span class="n">W</span><span class="p">[</span><span class="n">W</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">H</span><span class="p">[</span><span class="n">H</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -725,8 +722,8 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+                                
+    
 
 </body>>>
 </html>
