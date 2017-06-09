@@ -1,12 +1,34 @@
 import sys
+import os
 BASIC = True
 #notebook_file = sys.argv[1]
 
 def convert(notebook_file):
+	# Get parent folder of file
+	parent_folder = os.path.abspath(os.path.join(notebook_file, os.pardir))
+	notebook_name = (os.path.splitext(notebook_file)[0]).split("/")[-1]
+
 	from nbconvert import HTMLExporter
 	import nbformat
+	from traitlets.config import Config
+	c = Config()
+	c.HTMLExporter.preprocessors = ['nbconvert.preprocessors.ExtractOutputPreprocessor']
+	#resources = {}
+	# Create directory to store post files
+	"""
+	try:
+		os.makedirs(os.path.join(parent_folder, notebook_name))
+	except:
+		pass
+	"""
 
+	#resources['output_files_dir'] = ''
+	# create the new exporter using the custom config
+	html_exporter = HTMLExporter(config=c)
 	html_exporter = HTMLExporter()
+
+	#return html_exporter
+
 
 	if BASIC:
 		html_exporter.template_file = 'basic'
@@ -14,6 +36,18 @@ def convert(notebook_file):
 	nb = nbformat.reads(open(notebook_file, 'r').read(), as_version=4)
 
 	(body, resources) = html_exporter.from_notebook_node(nb)
+
+
+	"""
+	# Replace
+	body = body.replace('<img src = "output_""', '<img src = "../%s/output_"' %notebook_name)
+
+	mpl_images = resources['outputs']
+	for image_name, image_binary in mpl_images.iteritems():
+		with open(os.path.join(os.path.join(parent_folder, notebook_name, image_name)), 'wb') as f:
+			f.write(image_binary)
+
+	"""
 
 	read_navbar = open("navbar.txt", 'r').read()
 	read_mathjax = open("mathjax.txt", 'r').read()
@@ -71,3 +105,4 @@ def convert(notebook_file):
 	html_file_writer = open(html_file, 'w')
 	html_file_writer.write(body)
 	html_file_writer.close()
+	return body, resources
