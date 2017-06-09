@@ -47,14 +47,15 @@ if read_ga not in body:
 if read_disqus not in body:
 	body = body.replace("</body>", read_disqus + "\n</body>")
 
-	if read_mathjax not in body:
-		print "Adding", len(body), len(read_mathjax)
-		body = body.replace("</head>", read_mathjax + "\n</head>")
-		print len(body)
+if read_mathjax not in body:
+	body = body.replace("</head>", read_mathjax + "\n</head>")
 
 if read_css not in body:
 	body = body.replace("</title>", "</title>\n" + read_css)
 	body = body.replace("</body>", read_css + "\n</body>")
+
+body = body.replace("img src", "img width='100%' src")
+
 
 #body = body.replace(" rendered_html", "")
 body = body.replace(".rendered_html{overflow-x:auto" , ".rendered_html{overflow-x:auto;overflow-y: hidden;")
