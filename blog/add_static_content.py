@@ -54,6 +54,7 @@ if read_css not in body:
 	body = body.replace("</title>", "</title>\n" + read_css)
 	body = body.replace("</body>", read_css + "\n</body>")
 
+
 body = body.replace("img src", "img width='100%' src")
 
 
