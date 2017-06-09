@@ -16,14 +16,27 @@ nb = nbformat.reads(open(notebook_file, 'r').read(), as_version=4)
 (body, resources) = html_exporter.from_notebook_node(nb)
 
 read_navbar = open("navbar.txt", 'r').read()
+read_mathjax = open("mathjax.txt", 'r').read()
+
 read_disqus = open("disqus.txt", 'r').read()
 read_css = open("bootstrap_css.txt", 'r').read()
 read_ga = open("google_analytics.txt","r").read()
 
 if BASIC:
-	body = """<html><head><script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script><title></title></head><body><div class="container">"""+body+"</div></body></html>"
+	body = """<html>
+			<head>
+			<meta charset="utf-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		    <meta name="description" content="">
+		    <meta name="author" content="">
+		    </head>
+		    <body>
+		    <div class="container">"""+body+"</div></body></html>"
+
+
+
 
 if read_navbar not in body:
 	body = body.replace("<body>", "<body>\n" + read_navbar)
@@ -33,6 +46,11 @@ if read_ga not in body:
 
 if read_disqus not in body:
 	body = body.replace("</body>", read_disqus + "\n</body>")
+
+	if read_mathjax not in body:
+		print "Adding", len(body), len(read_mathjax)
+		body = body.replace("</head>", read_mathjax + "\n</head>")
+		print len(body)
 
 if read_css not in body:
 	body = body.replace("</title>", "</title>\n" + read_css)
