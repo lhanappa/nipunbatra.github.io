@@ -1,4 +1,5 @@
 import sys
+BASIC = True
 
 notebook_file = sys.argv[1]
 
@@ -6,7 +7,9 @@ from nbconvert import HTMLExporter
 import nbformat
 
 html_exporter = HTMLExporter()
-#html_exporter.template_file = 'basic'
+
+if BASIC:
+	html_exporter.template_file = 'basic'
 
 nb = nbformat.reads(open(notebook_file, 'r').read(), as_version=4)
 
@@ -16,6 +19,11 @@ read_navbar = open("navbar.txt", 'r').read()
 read_disqus = open("disqus.txt", 'r').read()
 read_css = open("bootstrap_css.txt", 'r').read()
 read_ga = open("google_analytics.txt","r").read()
+
+if BASIC:
+	body = """<html><head><script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><title></title></head><body><div class="container">"""+body+"</div></body></html>"
 
 if read_navbar not in body:
 	body = body.replace("<body>", "<body>\n" + read_navbar)
@@ -35,6 +43,9 @@ body = body.replace(".rendered_html{overflow-x:auto" , ".rendered_html{overflow-
 body = body.replace("#notebook{font-size:14px;line-height:20px;", "#notebook{font-size:20px;line-height:29px;")
 body = body.replace("div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#000;",
                     "div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#777;")
+
+
+
 
 html_file = notebook_file.replace(".ipynb", ".html")
 html_file_writer = open(html_file, 'w')
