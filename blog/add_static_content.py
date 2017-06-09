@@ -65,9 +65,10 @@ def convert(notebook_file):
 			    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 			    <meta name="description" content="">
 			    <meta name="author" content="">
+			    <title>Nipun Batra</title>
 			    </head>
 			    <body>
-			    <div class="container padding=10%">"""+body+"</div></body></html>"
+			    <div class="container" margin="5%">"""+body+"</div></body></html>"
 
 
 
