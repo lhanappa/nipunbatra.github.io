@@ -18,7 +18,7 @@ for s in subdirs[:]:
 	notebooks  = glob.glob(os.path.join(year_path, "*.ipynb"))
 	for n in notebooks[:]:
 
-		
+
 		try:
 			out = convert(n)
 		except:
