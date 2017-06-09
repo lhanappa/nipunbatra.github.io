@@ -1,0 +1,30 @@
+/*1. Make tables look prettier*/
+th, td {
+    padding: 8px;
+}
+
+/*Make table hoverable*/
+tr:hover {background-color: #f5f5f5}
+
+/*2. Make images 100%*/
+img {width: 100%}
+
+/*3. Make font-size 20px*/
+body    {font-family:Georgia,"Times New Roman",Times,serif;font-size:20px;line-height:1.42857143;color:#777777;background-color:#ffffff}
+
+/* Increase the padding between cells*/
+div.cell{padding:4px}
+
+/* Increase to 15 px for pre-formatted text*/
+pre{font-size:15px}
+
+/* Change font color of prompt*/
+div.input_prompt{display: none}
+div.output_prompt{display: none}
+
+
+/* Anchor pretty*/
+a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered
+
+
+
