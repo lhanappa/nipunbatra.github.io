@@ -33,7 +33,7 @@ if BASIC:
 		    <meta name="author" content="">
 		    </head>
 		    <body>
-		    <div class="container">"""+body+"</div></body></html>"
+		    <div class="container padding=10%">"""+body+"</div></body></html>"
 
 
 
