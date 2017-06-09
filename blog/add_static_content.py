@@ -2,6 +2,7 @@ import sys
 import os
 BASIC = True
 #notebook_file = sys.argv[1]
+from builtins import open
 
 def convert(notebook_file):
 	# Get parent folder of file
