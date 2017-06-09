@@ -1,0 +1,972 @@
+<html>
+				<head>
+				<meta charset="utf-8">
+			    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+			    <meta name="viewport" content="width=device-width, initial-scale=1">
+			    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+			    <meta name="description" content="">
+			    <meta name="author" content="">
+			      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            displayMath: [ ["$$",'$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+</head>
+			    <body>
+<nav class="navbar navbar-default">
+    <div class="container text-center">
+
+        <div id="navbar" class="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://www.cs.virginia.edu/~nb2cz/">Website</a></li>
+                <li><a href="../../index.html">Blog Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+			    <div class="container padding=10%">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Programatically-understanding-Expectation-Maximization">Programatically understanding Expectation Maximization<a class="anchor-link" href="#Programatically-understanding-Expectation-Maximization">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I was recently studying the <a href="http://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm">Expectation Maximization</a> algorithm from this well cited <a href="http://ai.stanford.edu/~chuongdo/papers/em_tutorial.pdf">Nature article</a>. To be honest, I found it hard to get all the maths right initially. I had to infact resort to looking up a few forums to get a clear understanding of this algorithm. I decided to take a programming approach to clear up some concepts in this problem. Another reason to do this is the amount of calculations needed in this algorithm (though not difficult, can be time consuming).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Maximum-Likelihood">Maximum Likelihood<a class="anchor-link" href="#Maximum-Likelihood">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are given two coins- A and B. Both these coins have a certain probability of getting heads. We choose one of the coin at random (with equal probability) and toss it 10 times noting down the heads-tails pattern. We also carefully account which coin was thrown. We repeat this procedure 5 times. The coin tosses observed in this case are show in the figure below in case A.</p>
+<p>Our aim is to determine the probability of getting a head on coin A and likewise for coin B. Intuitively, if we add up the number of heads observed when A was thrown and divide it by the total number of times A was tossed, we woud get this number. This comes from the well known principle of <a href="http://en.wikipedia.org/wiki/Maximum_likelihood">Maximum Likelihood</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://i.stack.imgur.com/mj0nb.gif" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This procedure of tossing a coin which may land as either heads or tails is an example of a Bernoulli trial. As per this Wiki page, its definition is as follows:</p>
+<blockquote><p>In the theory of probability and statistics, a Bernoulli trial (or binomial trial) is a random experiment with exactly two possible outcomes, "success" and "failure", in which the probability of success is the same every time the experiment is conducted</p>
+</blockquote>
+<p>When $n$ such trials are performed, it is called a binomial experiment. In the case of the coin toss experiment, if we have:</p>
+<ul>
+<li>$n$ coin toss</li>
+<li>$p$ probability of head in each trial -&gt; $1-p$ probability of head in each throw</li>
+</ul>
+<p>then we observe $k$ heads as per the following:</p>
+$${n\choose{k}} p^k(1-p)^{n-k}$$<p>Let us write some code to see how this function varies. We fix $n$=10 and for varying $p$ and observe how the probability distirbution(pmf) varies.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">StaticInteract</span><span class="p">,</span> <span class="n">RangeWidget</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/nipunbatra/anaconda/lib/python2.7/site-packages/IPython/html.py:14: ShimWarning: The &#96;IPython.html&#96; package has been deprecated since IPython 4.0. You should import from &#96;notebook&#96; instead. &#96;IPython.html.widgets&#96; has moved to &#96;ipywidgets&#96;.
+  &quot;&#96;IPython.html.widgets&#96; has moved to &#96;ipywidgets&#96;.&quot;, ShimWarning)
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ImportError</span>                               Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-1-c4b3df56529d&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      3</span> <span class="ansigreen">import</span> matplotlib<span class="ansiblue">.</span>pyplot <span class="ansigreen">as</span> plt<span class="ansiblue"></span>
+<span class="ansigreen">      4</span> <span class="ansigreen">import</span> seaborn <span class="ansigreen">as</span> sns<span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 5</span><span class="ansired"> </span><span class="ansigreen">from</span> ipywidgets <span class="ansigreen">import</span> StaticInteract<span class="ansiblue">,</span> RangeWidget<span class="ansiblue"></span>
+<span class="ansigreen">      6</span> get_ipython<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue">.</span>magic<span class="ansiblue">(</span><span class="ansiblue">u&apos;matplotlib inline&apos;</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+
+<span class="ansigreen">/Users/nipunbatra/anaconda/lib/python2.7/site-packages/ipywidgets/__init__.py</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      2</span> <span class="ansiblue"></span>
+<span class="ansigreen">      3</span> <span class="ansigreen">from</span> <span class="ansiblue">.</span>interact <span class="ansigreen">import</span> StaticInteract<span class="ansiblue"></span>
+<span class="ansigreen">----&gt; 4</span><span class="ansired"> </span><span class="ansigreen">from</span> <span class="ansiblue">.</span>widgets <span class="ansigreen">import</span> RadioWidget<span class="ansiblue">,</span> RangeWidget<span class="ansiblue">,</span> DropDownWidget<span class="ansiblue"></span>
+
+<span class="ansired">ImportError</span>: cannot import name RadioWidget</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">a</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_binomial</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">11</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>  <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$p = </span><span class="si">%.1f</span><span class="s2">$&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;PMF of $k$ heads&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">StaticInteract</span><span class="p">(</span><span class="n">plot_binomial</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">RangeWidget</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As expected, as we increase $p$, there is a higher probability of getting more heads. Now, let us look at the Maximum likelihood problem. Say, we are given that we made $n$ coin tosses and obtained $x$ heads. Using this information and the nature of distribution, let us find what value of $p$ would have most likely resulted in this data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we choose the probability of heads to be $p$, the likelihood (probability) of obtaining $x$ heads in $n$ throws in our data $D $ is:
+$$L(D|\theta) \propto p^x(1-p)^{n-x}$$
+If we differentiate this term wrt $p$ and equate to 0, we get:
+$$ xp^{x-1}(1-p)^{n-x} - p^x (n-x)(1-p)^{n-x-1} = 0$$
+or $$ p^{x-1}(1-p)^{n-x-1}[x(1-p) - p(n-x)]= 0$$
+or $$ x - xp - pn + xp = 0$$
+or $$ p = \frac{x}{n}$$</p>
+<p>This also generalizes over when multiple sets of throws are done. Thus, in the figure shown above, we find the probability of head for coins A and coins B, given the data, as :
+$$ P (A=head|D) = \frac{\mathrm{heads~observed~when~A~was~thrown}}{\mathrm{times~A~was~thrown}}$$
+$$ = \frac{24}{24+6} = 0.8$$
+Similarly, for coin B, we can find this ratio as 0.45.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Problem-description">Problem description<a class="anchor-link" href="#Problem-description">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we come to the main problem. What if we didn't note down which coin was thrown in which iteration. Can we still find out the probabilities of heads for the different coins.
+It turns out that we can use the EM algorithm for this task. I would recommend reading the theory in the nature paper before resuming this section. Now, we present the programming route to EM and its different components under this setting.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-the-dataset">Creating the dataset<a class="anchor-link" href="#Creating-the-dataset">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A head is labeled as a 1 and a tail as a 0. The five rows correspond to the five set of throws.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">observations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+                         <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The true coin choice- A =True, B= False</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">coins_id</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Completely-observed-case">Completely observed case<a class="anchor-link" href="#Completely-observed-case">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As discussed before, if we know which coin was used when, this task reduces to Maximum likelihood.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The sets of observations corresponding to coin A can be found as:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">observations</span><span class="p">[</span><span class="n">coins_id</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Number of heads recorded when A was thrown</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">observations</span><span class="p">[</span><span class="n">coins_id</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thus, the probability of head for A given the data would be:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">observations</span><span class="p">[</span><span class="n">coins_id</span><span class="p">])</span><span class="o">/</span><span class="n">observations</span><span class="p">[</span><span class="n">coins_id</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same quantity for coin B would be the following:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">observations</span><span class="p">[</span><span class="o">~</span><span class="n">coins_id</span><span class="p">])</span><span class="o">/</span><span class="n">observations</span><span class="p">[</span><span class="o">~</span><span class="n">coins_id</span><span class="p">]</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unseen-data-settings">Unseen data settings<a class="anchor-link" href="#Unseen-data-settings">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we follow the Step b in the first figure on this page (which is Figure 1 from the Nature article)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Step-0:-Assuming-initial-set-of-parameters">Step 0: Assuming initial set of parameters<a class="anchor-link" href="#Step-0:-Assuming-initial-set-of-parameters">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$\theta_A^0 = 0.6$$$$\theta_B^0 = 0.5$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Iteration-1,-Step-1-:-E-step">Iteration 1, Step 1 : E-step<a class="anchor-link" href="#Iteration-1,-Step-1-:-E-step">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us take the first group of observation. We have 5 Heads and 5 tails. PMF according to binomial distribution is given by : ${n\choose{k}}p^k(1-p)^{n-k}$. For coin A we have $p=\theta^0_A=0.6$ and $n=10$. We calculate the $pmf$ as follows:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">coin_A_pmf_observation_1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">coin_A_pmf_observation_1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, for coin B, we get</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">coin_B_pmf_observation_1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">coin_B_pmf_observation_1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since coin_B_pmf_observation_1 is greater than coin_A_pmf_observation_1, coin B is more likely to have produced the sequence of 5 Heads and 5 Tails. We now normalize these $pmfs$ to 1 and $weigh$ our observations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">normalized_coin_A_pmf_observation_1</span> <span class="o">=</span> <span class="n">coin_A_pmf_observation_1</span><span class="o">/</span><span class="p">(</span><span class="n">coin_A_pmf_observation_1</span><span class="o">+</span><span class="n">coin_B_pmf_observation_1</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;</span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">normalized_coin_A_pmf_observation_1</span>
+<span class="n">normalized_coin_B_pmf_observation_1</span> <span class="o">=</span> <span class="n">coin_B_pmf_observation_1</span><span class="o">/</span><span class="p">(</span><span class="n">coin_A_pmf_observation_1</span><span class="o">+</span><span class="n">coin_B_pmf_observation_1</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;</span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">normalized_coin_B_pmf_observation_1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now weigh in the observations according to this ratio. Thus, for observation set 1, we have:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">weighted_heads_A_obervation_1</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">normalized_coin_A_pmf_observation_1</span>
+<span class="k">print</span> <span class="s2">&quot;Coin A Weighted count for heads in observation 1: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">weighted_heads_A_obervation_1</span>
+<span class="n">weighted_tails_A_obervation_1</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">normalized_coin_A_pmf_observation_1</span>
+<span class="k">print</span> <span class="s2">&quot;Coin A Weighted count for tails in observation 1: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">weighted_tails_A_obervation_1</span>
+<span class="n">weighted_heads_B_obervation_1</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">normalized_coin_B_pmf_observation_1</span>
+<span class="k">print</span> <span class="s2">&quot;Coin B Weighted count for heads in observation 1: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">weighted_heads_B_obervation_1</span>
+<span class="n">weighted_tails_B_obervation_1</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">normalized_coin_B_pmf_observation_1</span>
+<span class="k">print</span> <span class="s2">&quot;Coin B Weighted count for tails in observation 1: </span><span class="si">%0.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">weighted_tails_B_obervation_1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can similarly find out the weigted count in each observation set for both coin A and B. For now, we will pick up the numbers from the paper.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Iteration-1,-Step-2:-M-step">Iteration 1, Step 2: M-step<a class="anchor-link" href="#Iteration-1,-Step-2:-M-step">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We now take the sum of weighted count of heads for both coin A and B. For coin A, we have 21.3 heads and 8.6 tails. Thus, we get the probability of getting a head at the end of this iteration as:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="mf">21.3</span><span class="o">/</span><span class="p">(</span><span class="mf">21.3</span><span class="o">+</span><span class="mf">8.6</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can find the same quantity for coin B as well. Next, we repeat the same procedure using these latest calculated probabilities of obtaining heads for coins A and B.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="EM-single-iteration">EM single iteration<a class="anchor-link" href="#EM-single-iteration">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us now write a procedure to do a single iteration of the EM algorithm. The function takes in as argument the following:</p>
+<ul>
+<li>priors $\theta_A$ and $\theta_B$</li>
+<li>observation matrix (5 X 10) in this case</li>
+</ul>
+<p>and outputs the new set of priors based on EM iteration.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">em_single</span><span class="p">(</span><span class="n">priors</span><span class="p">,</span> <span class="n">observations</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs a single EM step</span>
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    priors : [theta_A, theta_B]</span>
+<span class="sd">    observations : [m X n matrix]</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    --------</span>
+<span class="sd">    new_priors: [new_theta_A, new_theta_B]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:{</span><span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="s1">&#39;B&#39;</span><span class="p">:{</span><span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}}</span>
+    <span class="n">theta_A</span> <span class="o">=</span> <span class="n">priors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">theta_B</span> <span class="o">=</span> <span class="n">priors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># E step</span>
+    <span class="k">for</span> <span class="n">observation</span> <span class="ow">in</span> <span class="n">observations</span><span class="p">:</span> 
+        <span class="n">len_observation</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
+        <span class="n">num_heads</span> <span class="o">=</span> <span class="n">observation</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">num_tails</span> <span class="o">=</span> <span class="n">len_observation</span> <span class="o">-</span> <span class="n">num_heads</span>
+        <span class="n">contribution_A</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">num_heads</span><span class="p">,</span><span class="n">len_observation</span><span class="p">,</span><span class="n">theta_A</span><span class="p">)</span>
+        <span class="n">contribution_B</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">num_heads</span><span class="p">,</span><span class="n">len_observation</span><span class="p">,</span><span class="n">theta_B</span><span class="p">)</span>
+        <span class="n">weight_A</span> <span class="o">=</span> <span class="n">contribution_A</span><span class="o">/</span><span class="p">(</span><span class="n">contribution_A</span><span class="o">+</span><span class="n">contribution_B</span><span class="p">)</span>
+        <span class="n">weight_B</span> <span class="o">=</span> <span class="n">contribution_B</span><span class="o">/</span><span class="p">(</span><span class="n">contribution_A</span><span class="o">+</span><span class="n">contribution_B</span><span class="p">)</span>
+        <span class="c1"># Incrementing counts</span>
+        <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">+=</span> <span class="n">weight_A</span><span class="o">*</span><span class="n">num_heads</span>
+        <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">+=</span> <span class="n">weight_A</span><span class="o">*</span><span class="n">num_tails</span>
+        <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">+=</span> <span class="n">weight_B</span><span class="o">*</span><span class="n">num_heads</span>
+        <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">+=</span> <span class="n">weight_B</span><span class="o">*</span><span class="n">num_tails</span>
+    <span class="c1"># M step</span>
+    <span class="n">new_theta_A</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">][</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
+    <span class="n">new_theta_B</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">new_theta_A</span><span class="p">,</span> <span class="n">new_theta_B</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="EM-procedure">EM procedure<a class="anchor-link" href="#EM-procedure">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This procedure calls the single EM iteration untill convergence or some stopping condition. We specificy two stopping conditions and the procedure stops when either condition is met.</p>
+<ul>
+<li>10000 iterations </li>
+<li>the change in prior is less than 1e-6</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">em</span><span class="p">(</span><span class="n">observations</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">iteration</span><span class="o">&lt;</span><span class="n">iterations</span><span class="p">:</span>
+        <span class="n">new_prior</span> <span class="o">=</span> <span class="n">em_single</span><span class="p">(</span><span class="n">prior</span><span class="p">,</span> <span class="n">observations</span><span class="p">)</span>
+        <span class="n">delta_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">prior</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">new_prior</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">delta_change</span><span class="o">&lt;</span><span class="n">tol</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prior</span> <span class="o">=</span> <span class="n">new_prior</span>
+            <span class="n">iteration</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">new_prior</span><span class="p">,</span> <span class="n">iteration</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us run the algorithm for the priors used in the paper</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">em</span><span class="p">(</span><span class="n">observations</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Great! Our results match exactly! It took 14 iterations of the EM algorithm to reach this value.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if we reverse the priors for A and B</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">em</span><span class="p">(</span><span class="n">observations</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ok. EM does not have a notion of A and B!! For it, there exists two coins and it agains finds the same results.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if prior for both A and B were equal?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">em</span><span class="p">(</span><span class="n">observations</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, this clearly is not a very good initialization strategy!!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if one of the priors is very close to 1</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">em</span><span class="p">(</span><span class="n">observations</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.9999</span><span class="p">,</span><span class="mf">0.00000001</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So EM is still smart enough!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><a href="http://math.stackexchange.com/questions/81004/how-does-expectation-maximization-work-in-coin-flipping-problem">Question on math stack exchange</a></li>
+<li><a href="http://math.stackexchange.com/questions/25111/how-does-expectation-maximization-work">Another question on math stack exhange</a></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you have any suggestions feel free let me know.</p>
+
+</div>
+</div>
+</div></div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96903131-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://nipunbatra-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+    
+
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../assets/css/custom.css" />
+
+
+</body></html>
