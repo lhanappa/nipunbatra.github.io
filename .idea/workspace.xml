@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9027a7cf-4233-42f6-9370-7c19fe8e6cdb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/nipun-custom.css" afterPath="$PROJECT_DIR$/assets/css/nipun-custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-    </list>
+    <list default="true" id="9027a7cf-4233-42f6-9370-7c19fe8e6cdb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/blog/add_static_content.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2025">
-              <caret line="81" column="47" lean-forward="true" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+              <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -107,11 +104,11 @@
             <state relative-caret-position="329">
               <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
               <folding>
-                <marker date="1497081110000" expanded="true" signature="3104:3114" ph="..." />
-                <marker date="1497081110000" expanded="true" signature="3104:3124" ph="..." />
-                <marker date="1497081110000" expanded="true" signature="3104:3131" ph="..." />
-                <marker date="1497081110000" expanded="true" signature="3104:3994" ph="..." />
-                <marker date="1497081110000" expanded="true" signature="3557:3984" ph="..." />
+                <marker date="1497081150000" expanded="true" signature="3122:3132" ph="..." />
+                <marker date="1497081150000" expanded="true" signature="3122:3142" ph="..." />
+                <marker date="1497081150000" expanded="true" signature="3122:3149" ph="..." />
+                <marker date="1497081150000" expanded="true" signature="3122:4012" ph="..." />
+                <marker date="1497081150000" expanded="true" signature="3575:4002" ph="..." />
               </folding>
             </state>
           </provider>
@@ -568,11 +565,11 @@
         <state relative-caret-position="329">
           <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
           <folding>
-            <marker date="1497081110000" expanded="true" signature="3104:3114" ph="..." />
-            <marker date="1497081110000" expanded="true" signature="3104:3124" ph="..." />
-            <marker date="1497081110000" expanded="true" signature="3104:3131" ph="..." />
-            <marker date="1497081110000" expanded="true" signature="3104:3994" ph="..." />
-            <marker date="1497081110000" expanded="true" signature="3557:3984" ph="..." />
+            <marker date="1497081150000" expanded="true" signature="3122:3132" ph="..." />
+            <marker date="1497081150000" expanded="true" signature="3122:3142" ph="..." />
+            <marker date="1497081150000" expanded="true" signature="3122:3149" ph="..." />
+            <marker date="1497081150000" expanded="true" signature="3122:4012" ph="..." />
+            <marker date="1497081150000" expanded="true" signature="3575:4002" ph="..." />
           </folding>
         </state>
       </provider>
@@ -596,7 +593,7 @@
     <entry file="file://$PROJECT_DIR$/blog/add_static_content.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
-          <caret line="81" column="47" lean-forward="true" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+          <caret line="81" column="47" lean-forward="false" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
