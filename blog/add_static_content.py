@@ -48,9 +48,11 @@ def convert(notebook_file):
 	soup = BeautifulSoup(body, 'html.parser')
 	try:
 		title = soup.find_all('h1')[0].contents[0]
+		if title is None: title = "Nipun Batra"
 	except:
-		pass
-	if title is None: title="Nipun Batra"
+		title="Nipun Batra"
+		
+
 
 
 	"""

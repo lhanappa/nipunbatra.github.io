@@ -1,6 +1,5 @@
 import os
 import glob
-from subprocess import check_output
 from add_static_content import convert
 
 base_folder = "."
@@ -17,8 +16,6 @@ for s in subdirs[:]:
 	year_path = os.path.join(base_folder, s)
 	notebooks  = glob.glob(os.path.join(year_path, "*.ipynb"))
 	for n in notebooks[:]:
-
-
 		try:
 			out = convert(n)
 		except:
