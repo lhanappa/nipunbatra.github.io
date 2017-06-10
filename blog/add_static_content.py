@@ -3,6 +3,7 @@ import os
 BASIC = True
 #notebook_file = sys.argv[1]
 from builtins import open
+import re
 
 
 home_page = "https://nipunbatra.github.io/blog/"
@@ -41,6 +42,15 @@ def convert(notebook_file):
 	nb = nbformat.reads(open(notebook_file, 'r').read(), as_version=4)
 
 	(body, resources) = html_exporter.from_notebook_node(nb)
+	# FIRST between H1 in body
+
+	from bs4 import BeautifulSoup
+	soup = BeautifulSoup(body, 'html.parser')
+	try:
+		title = soup.find_all('h1')[0].contents[0]
+	except:
+		pass
+	if title is None: title="Nipun Batra"
 
 
 	"""
@@ -56,7 +66,6 @@ def convert(notebook_file):
 
 	read_navbar = open("navbar.txt", 'r').read()
 	read_mathjax = open("mathjax.txt", 'r').read()
-	read_social = open("social.txt", 'r').read()
 
 	read_disqus = open("disqus.txt", 'r').read()
 	read_css = open("bootstrap_css.txt", 'r').read()
@@ -71,7 +80,7 @@ def convert(notebook_file):
 			    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 			    <meta name="description" content="">
 			    <meta name="author" content="">
-			    <title>Nipun Batra</title>
+			    <title>"""+title+"""</title>
 			    </head>
 			    <body>
 			    <div class="container" margin="5%">"""+body+"</div></body></html>"
@@ -95,12 +104,8 @@ def convert(notebook_file):
 		body = body.replace("</title>", "</title>\n" + read_css)
 		body = body.replace("</body>", read_css + "\n</body>")
 
-	if read_social not in body:
-		read_social = read_social.replace("TITLE", "TILE")
-		read_social = read_social.replace("URL",   "URL")
 
 	# Put social media icons
-	body = body.replace()
 	#body = body.replace("img src", "img width='100%' src")
 
 
@@ -118,4 +123,3 @@ def convert(notebook_file):
 	html_file_writer = open(html_file, 'w')
 	html_file_writer.write(body)
 	html_file_writer.close()
-	return body, resources
