@@ -4,6 +4,10 @@ BASIC = True
 #notebook_file = sys.argv[1]
 from builtins import open
 
+
+home_page = "https://nipunbatra.github.io/blog/"
+social = {'FB':"https://facebook.com/sharer/sharer.php?u=%s"}
+
 def convert(notebook_file):
 	# Get parent folder of file
 	parent_folder = os.path.abspath(os.path.join(notebook_file, os.pardir))
@@ -52,6 +56,7 @@ def convert(notebook_file):
 
 	read_navbar = open("navbar.txt", 'r').read()
 	read_mathjax = open("mathjax.txt", 'r').read()
+	read_social = open("social.txt", 'r').read()
 
 	read_disqus = open("disqus.txt", 'r').read()
 	read_css = open("bootstrap_css.txt", 'r').read()
@@ -90,7 +95,12 @@ def convert(notebook_file):
 		body = body.replace("</title>", "</title>\n" + read_css)
 		body = body.replace("</body>", read_css + "\n</body>")
 
+	if read_social not in body:
+		read_social = read_social.replace("TITLE", "TILE")
+		read_social = read_social.replace("URL",   "URL")
 
+	# Put social media icons
+	body = body.replace()
 	#body = body.replace("img src", "img width='100%' src")
 
 
@@ -99,6 +109,7 @@ def convert(notebook_file):
 	body = body.replace("#notebook{font-size:14px;line-height:20px;", "#notebook{font-size:20px;line-height:29px;")
 	body = body.replace("div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#000;",
 	                    "div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;color:#777;")
+
 
 
 
