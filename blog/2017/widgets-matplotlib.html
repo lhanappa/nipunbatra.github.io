@@ -403,7 +403,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Ensuring-we-do-not-select-home-out-of-range">Ensuring we do not select home out of range<a class="anchor-link" href="#Ensuring-we-do-not-select-home-out-of-range">&#182;</a></h3><p>If you notice, we simply incremented and decremented the selected data point without considering going beyond (0, number of data points). So, we need to change the call back functions to check that we do not go beyond the range. This would require the following changes to <code>next()</code> with the changes to <code>prev()</code> being similar.</p>
+<h3 id="Ensuring-we-do-not-select-data-point-out-of-range">Ensuring we do not select data point out of range<a class="anchor-link" href="#Ensuring-we-do-not-select-data-point-out-of-range">&#182;</a></h3><p>If you notice, we simply incremented and decremented the selected data point without considering going beyond (0, number of data points). So, we need to change the call back functions to check that we do not go beyond the range. This would require the following changes to <code>next()</code> with the changes to <code>prev()</code> being similar.</p>
 <div class="highlight"><pre><span class="n">data_min</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">data_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span>
 <span class="n">selected</span> <span class="o">=</span> <span class="mi">0</span>
