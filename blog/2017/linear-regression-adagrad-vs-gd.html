@@ -406,7 +406,7 @@ Gradient at w=10.0, b=4.0 is: [array(-0.14406455246023858), array(-0.00711783045
         <span class="c1"># At each iteration, we add the square of the gradients to `sum_squares_gradients`</span>
         <span class="n">sum_squares_gradients</span><span class="o">=</span> <span class="p">[</span><span class="n">eps</span> <span class="o">+</span> <span class="n">sum_prev</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="k">for</span> <span class="n">sum_prev</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sum_squares_gradients</span><span class="p">,</span> <span class="n">gradients</span><span class="p">)]</span>
         <span class="c1"># Adapted learning rate for parameter list</span>
-        <span class="n">lrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sum_squares_gradients</span><span class="p">))</span>
+        <span class="n">lrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sg</span><span class="p">))</span> <span class="k">for</span> <span class="n">sg</span> <span class="ow">in</span> <span class="n">sum_squares_gradients</span><span class="p">]</span>
         <span class="c1"># Paramter update</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span><span class="o">-</span><span class="p">(</span><span class="n">adapted_lr</span><span class="o">*</span><span class="n">grad_param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span><span class="p">,</span> <span class="n">adapted_lr</span><span class="p">,</span> <span class="n">grad_param</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">lrs</span><span class="p">,</span> <span class="n">gradients</span><span class="p">)]</span>
         <span class="n">param_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
@@ -890,7 +890,7 @@ IlGnsBERkahT2IiISNQpbEREJOr+P7h2YjWWeyeTAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x10966e790&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x1153b4ad0&gt;</pre>
 </div>
 
 </div>
@@ -1167,7 +1167,7 @@ FBwiIlIpCg4REamU/wfssjtOTCGFzAAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x10ff39e90&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x11569c4d0&gt;</pre>
 </div>
 
 </div>
