@@ -48,14 +48,13 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 			    <div class="container" margin="5%">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -63,8 +62,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -73,8 +71,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -82,8 +79,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -97,7 +93,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
@@ -111,7 +107,7 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span>
 <span class="n">Y_gen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
 <span class="n">X_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># So that atleast twice as much</span>
@@ -132,7 +128,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -241,8 +241,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -256,7 +255,7 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">e</span><span class="o">+=</span><span class="s2">&quot;X[:,</span><span class="si">%d</span><span class="s2">] &gt; 2 * X[:,</span><span class="si">%d</span><span class="s2">],&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
@@ -271,11 +270,15 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&apos;[X[:,0] &gt; 2 * X[:,6],X[:,1] &gt; 2 * X[:,7],X[:,2] &gt; 2 * X[:,8],X[:,3] &gt; 2 * X[:,9],X[:,4] &gt; 2 * X[:,10],X[:,5] &gt; 2 * X[:,11]]&apos;</pre>
+<pre>&#39;[X[:,0] &gt; 2 * X[:,6],X[:,1] &gt; 2 * X[:,7],X[:,2] &gt; 2 * X[:,8],X[:,3] &gt; 2 * X[:,9],X[:,4] &gt; 2 * X[:,10],X[:,5] &gt; 2 * X[:,11]]&#39;</pre>
 </div>
 
 </div>
@@ -284,8 +287,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -294,8 +296,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -308,7 +309,7 @@
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>  <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">input_constraints_X</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">input_constraints_Y</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span>  <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">input_constraints_X</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">input_constraints_Y</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">cvxpy</span> <span class="kn">as</span> <span class="nn">cvx</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -370,7 +371,7 @@
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c1"># Without constraints</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Without constraints</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="c1"># With contstraints</span>
 <span class="n">X_c</span><span class="p">,</span> <span class="n">Y_c</span><span class="p">,</span> <span class="n">r_c</span> <span class="o">=</span> <span class="n">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">input_constraints_X</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
@@ -386,7 +387,7 @@
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -397,7 +398,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -481,7 +486,7 @@
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_c</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_c</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -492,7 +497,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -571,8 +580,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -586,7 +594,7 @@
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">e_rev</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">e_rev</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span>
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">e_rev</span><span class="o">+=</span><span class="s2">&quot; 2* X[:,</span><span class="si">%d</span><span class="s2">]  &lt; X[:,</span><span class="si">%d</span><span class="s2">],&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">e_rev</span> <span class="o">=</span> <span class="n">e_rev</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
@@ -601,11 +609,15 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&apos;[ 2* X[:,0]  &lt; X[:,6], 2* X[:,1]  &lt; X[:,7], 2* X[:,2]  &lt; X[:,8], 2* X[:,3]  &lt; X[:,9], 2* X[:,4]  &lt; X[:,10], 2* X[:,5]  &lt; X[:,11]]&apos;</pre>
+<pre>&#39;[ 2* X[:,0]  &lt; X[:,6], 2* X[:,1]  &lt; X[:,7], 2* X[:,2]  &lt; X[:,8], 2* X[:,3]  &lt; X[:,9], 2* X[:,4]  &lt; X[:,10], 2* X[:,5]  &lt; X[:,11]]&#39;</pre>
 </div>
 
 </div>
@@ -619,7 +631,7 @@
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X_c_rev</span><span class="p">,</span> <span class="n">Y_c_rev</span><span class="p">,</span> <span class="n">r_c_rev</span> <span class="o">=</span> <span class="n">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">input_constraints_X</span><span class="o">=</span><span class="n">e_rev</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_c_rev</span><span class="p">,</span> <span class="n">Y_c_rev</span><span class="p">,</span> <span class="n">r_c_rev</span> <span class="o">=</span> <span class="n">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">input_constraints_X</span><span class="o">=</span><span class="n">e_rev</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -632,7 +644,7 @@
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_c_rev</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_c_rev</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -643,7 +655,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -722,8 +738,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -731,7 +746,10 @@
 
 </div>
 </div>
-</div></div><script>
+</div>
+ 
+
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

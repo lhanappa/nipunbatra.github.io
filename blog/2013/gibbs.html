@@ -48,14 +48,13 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 			    <div class="container" margin="5%">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -63,8 +62,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -77,7 +75,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc</span>
 <span class="n">rc</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
@@ -97,8 +95,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -111,7 +108,7 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">network</span><span class="o">=</span><span class="p">{</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">network</span><span class="o">=</span><span class="p">{</span>
     <span class="s2">&quot;V&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Letter&quot;</span><span class="p">,</span> <span class="s2">&quot;Grade&quot;</span><span class="p">,</span> <span class="s2">&quot;Intelligence&quot;</span><span class="p">,</span> <span class="s2">&quot;SAT&quot;</span><span class="p">,</span> <span class="s2">&quot;Difficulty&quot;</span><span class="p">],</span>
     <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="s2">&quot;Intelligence&quot;</span><span class="p">,</span> <span class="s2">&quot;Grade&quot;</span><span class="p">],</span>
         <span class="p">[</span><span class="s2">&quot;Difficulty&quot;</span><span class="p">,</span> <span class="s2">&quot;Grade&quot;</span><span class="p">],</span>
@@ -183,8 +180,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -197,13 +193,13 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pgm</span> <span class="o">=</span> <span class="n">daft</span><span class="o">.</span><span class="n">PGM</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pgm</span> <span class="o">=</span> <span class="n">daft</span><span class="o">.</span><span class="n">PGM</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
-<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Difficulty&#39;</span><span class="p">,</span><span class="s2">r&quot;Difficulty&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>   
-<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Intelligence&#39;</span><span class="p">,</span><span class="s2">r&quot;Intelligence&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span><span class="s2">r&quot;Grade&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>    
-<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;SAT&#39;</span><span class="p">,</span><span class="s2">r&quot;SAT&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>    
-<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Letter&#39;</span><span class="p">,</span><span class="s2">r&quot;Letter&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>   
+<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Difficulty&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;Difficulty&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>   
+<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Intelligence&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;Intelligence&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;Grade&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>    
+<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;SAT&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;SAT&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>    
+<span class="n">pgm</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">daft</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="s1">&#39;Letter&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;Letter&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>   
 
 <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">network</span><span class="p">[</span><span class="s1">&#39;Vdata&#39;</span><span class="p">]:</span>
     <span class="n">parents</span><span class="o">=</span><span class="n">network</span><span class="p">[</span><span class="s1">&#39;Vdata&#39;</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;parents&#39;</span><span class="p">]</span>
@@ -221,7 +217,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -230,7 +230,11 @@
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -429,8 +433,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -443,7 +446,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">find_markov_blanket</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">network</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">find_markov_blanket</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">network</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Find the Markov Blanket of the node in the given network</span>
 <span class="sd">    Markov Blanket is given by:</span>
@@ -487,7 +490,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">find_markov_blanket</span><span class="p">(</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span><span class="n">network</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">find_markov_blanket</span><span class="p">(</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span><span class="n">network</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -498,11 +501,15 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;Difficulty&apos;, &apos;Letter&apos;, &apos;Intelligence&apos;]</pre>
+<pre>[&#39;Difficulty&#39;, &#39;Letter&#39;, &#39;Intelligence&#39;]</pre>
 </div>
 
 </div>
@@ -511,8 +518,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -520,8 +526,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -534,7 +539,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">pick_random</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">network</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">pick_random</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">network</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Assigns a random state to a given node</span>
 <span class="sd">    N</span>
@@ -554,7 +559,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pick_random</span><span class="p">(</span><span class="s1">&#39;SAT&#39;</span><span class="p">,</span><span class="n">network</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pick_random</span><span class="p">(</span><span class="s1">&#39;SAT&#39;</span><span class="p">,</span><span class="n">network</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -565,11 +570,15 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&apos;lowscore&apos;</pre>
+<pre>&#39;lowscore&#39;</pre>
 </div>
 
 </div>
@@ -578,8 +587,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -592,7 +600,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">pick_random_non_evidence_node</span><span class="p">(</span><span class="n">non_evidence_nodes</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">pick_random_non_evidence_node</span><span class="p">(</span><span class="n">non_evidence_nodes</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">non_evidence_nodes</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">non_evidence_nodes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
 </pre></div>
 
@@ -601,8 +609,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -615,7 +622,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">get_next_value</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">network</span><span class="p">,</span><span class="n">simulation</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">get_next_value</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">network</span><span class="p">,</span><span class="n">simulation</span><span class="p">):</span>
     <span class="n">parents_current_node_to_update</span><span class="o">=</span><span class="n">network</span><span class="p">[</span><span class="s1">&#39;Vdata&#39;</span><span class="p">][</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;parents&#39;</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">parents_current_node_to_update</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="c1">#The node has no parent and we can update it based on the prior</span>
@@ -637,8 +644,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -651,7 +657,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">gibbs_sampling</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">evidence</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">gibbs_sampling</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">evidence</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">simulation</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">nodes</span><span class="o">=</span><span class="n">network</span><span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">]</span>
     <span class="n">non_evidence_nodes</span><span class="o">=</span><span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span> <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">evidence</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>        
@@ -677,8 +683,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -686,8 +691,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -700,7 +704,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">iterations</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">iterations</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
 <span class="n">sim</span><span class="o">=</span><span class="n">gibbs_sampling</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Intelligence&quot;</span><span class="p">:</span><span class="s2">&quot;high&quot;</span><span class="p">},</span><span class="n">iterations</span><span class="p">)</span>
 </pre></div>
 
@@ -709,8 +713,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -724,7 +727,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">after_removing_burnt_samples</span><span class="o">=</span><span class="n">sim</span><span class="p">[</span><span class="n">iterations</span><span class="o">/</span><span class="mi">10</span><span class="p">:]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">after_removing_burnt_samples</span><span class="o">=</span><span class="n">sim</span><span class="p">[</span><span class="n">iterations</span><span class="o">/</span><span class="mi">10</span><span class="p">:]</span>
 <span class="n">count</span><span class="o">=</span><span class="p">{</span><span class="n">val</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">network</span><span class="p">[</span><span class="s1">&#39;Vdata&#39;</span><span class="p">][</span><span class="s1">&#39;Letter&#39;</span><span class="p">][</span><span class="s1">&#39;vals&#39;</span><span class="p">]}</span>
 </pre></div>
 
@@ -733,8 +736,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -748,7 +750,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">for</span> <span class="n">assignment</span> <span class="ow">in</span> <span class="n">after_removing_burnt_samples</span><span class="p">:</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">assignment</span> <span class="ow">in</span> <span class="n">after_removing_burnt_samples</span><span class="p">:</span>
     <span class="n">count</span><span class="p">[</span><span class="n">assignment</span><span class="p">[</span><span class="s1">&#39;Letter&#39;</span><span class="p">]]</span><span class="o">+=</span><span class="mi">1</span>    
 </pre></div>
 
@@ -757,8 +759,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -772,7 +773,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">count</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">count</span>
 </pre></div>
 
 </div>
@@ -783,11 +784,15 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&apos;strong&apos;: 7061, &apos;weak&apos;: 1940}</pre>
+<pre>{&#39;strong&#39;: 7061, &#39;weak&#39;: 1940}</pre>
 </div>
 
 </div>
@@ -796,8 +801,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -811,7 +815,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">probabilites</span><span class="o">=</span><span class="p">{}</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">probabilites</span><span class="o">=</span><span class="p">{}</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
     <span class="n">probabilites</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">=</span><span class="n">count</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="o">.</span><span class="mi">90</span><span class="o">*</span><span class="n">iterations</span><span class="p">)</span>
 <span class="n">probabilites</span>
@@ -825,11 +829,15 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&apos;strong&apos;: 0.7845555555555556, &apos;weak&apos;: 0.21555555555555556}</pre>
+<pre>{&#39;strong&#39;: 0.7845555555555556, &#39;weak&#39;: 0.21555555555555556}</pre>
 </div>
 
 </div>
@@ -838,8 +846,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -852,7 +859,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">iterations</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">iterations</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)</span>
 <span class="n">sim</span><span class="o">=</span><span class="n">gibbs_sampling</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="p">{},</span><span class="n">iterations</span><span class="p">)</span>
 <span class="n">after_removing_burnt_samples</span><span class="o">=</span><span class="n">sim</span><span class="p">[</span><span class="n">iterations</span><span class="o">/</span><span class="mi">10</span><span class="p">:]</span>
 <span class="n">count</span><span class="o">=</span><span class="p">{</span><span class="n">val</span><span class="p">:</span><span class="mi">0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">network</span><span class="p">[</span><span class="s1">&#39;Vdata&#39;</span><span class="p">][</span><span class="s1">&#39;Letter&#39;</span><span class="p">][</span><span class="s1">&#39;vals&#39;</span><span class="p">]}</span>
@@ -872,11 +879,15 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&apos;strong&apos;: 0.4766666666666667, &apos;weak&apos;: 0.5234444444444445}</pre>
+<pre>{&#39;strong&#39;: 0.4766666666666667, &#39;weak&#39;: 0.5234444444444445}</pre>
 </div>
 
 </div>
@@ -885,8 +896,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -899,7 +909,7 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),[</span><span class="n">probabilites</span><span class="p">[</span><span class="s1">&#39;strong&#39;</span><span class="p">],</span><span class="n">probabilites</span><span class="p">[</span><span class="s1">&#39;weak&#39;</span><span class="p">]])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],[</span><span class="s1">&#39;Strong&#39;</span><span class="p">,</span><span class="s1">&#39;Weak&#39;</span><span class="p">])</span>
@@ -920,7 +930,11 @@ amSYSpLUyDCVJKmRYSpJUiPDVJKkRv8fPtB1qJrQ6PIAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1037,7 +1051,10 @@ AAAAAElFTkSuQmCC
 </div>
 </div>
 
-</div></div><script>
+</div>
+ 
+
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

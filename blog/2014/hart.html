@@ -48,14 +48,13 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 			    <div class="container" margin="5%">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -63,8 +62,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -73,8 +71,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -87,7 +84,7 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
 
@@ -115,8 +112,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -129,7 +125,7 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">nilmtk.utils</span> <span class="kn">import</span> <span class="n">dependencies_diagnostics</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">nilmtk.utils</span> <span class="kn">import</span> <span class="n">dependencies_diagnostics</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dependencies_diagnostics</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Value&quot;</span><span class="p">))</span>
 </pre></div>
 
@@ -141,7 +137,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -200,8 +200,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -214,7 +213,7 @@
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/nipun/datasets/&#39;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/nipun/datasets/&#39;</span>
 <span class="n">we</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;wikienergy.h5&#39;</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;loaded &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">we</span><span class="o">.</span><span class="n">buildings</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; buildings&#39;</span><span class="p">)</span>
 </pre></div>
@@ -227,7 +226,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>loaded 239 buildings
 </pre>
@@ -238,8 +241,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -252,7 +254,7 @@
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">building_number</span> <span class="o">=</span> <span class="mi">11</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">building_number</span> <span class="o">=</span> <span class="mi">11</span>
 <span class="n">print_dict</span><span class="p">(</span><span class="n">we</span><span class="o">.</span><span class="n">buildings</span><span class="p">[</span><span class="n">building_number</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>
 </pre></div>
 
@@ -264,7 +266,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 <div class="output_html rendered_html output_subarea ">
 <ul><li><strong>instance</strong>: 11</li><li><strong>dataset</strong>: WikiEnergy</li><li><strong>original_name</strong>: 434</li></ul>
@@ -276,8 +282,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -290,7 +295,7 @@
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">we</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">TimeFrame</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2014-04-01 00:00:00-05:00&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2014-04-02 00:00:00-05:00&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">we</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">TimeFrame</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2014-04-01 00:00:00-05:00&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2014-04-02 00:00:00-05:00&#39;</span><span class="p">)</span>
 <span class="n">elec</span> <span class="o">=</span> <span class="n">we</span><span class="o">.</span><span class="n">buildings</span><span class="p">[</span><span class="n">building_number</span><span class="p">]</span><span class="o">.</span><span class="n">elec</span>
 <span class="n">elec</span><span class="o">.</span><span class="n">appliances</span>
 </pre></div>
@@ -303,20 +308,24 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[Appliance(type=&apos;fridge&apos;, instance=1),
- Appliance(type=&apos;dish washer&apos;, instance=1),
- Appliance(type=&apos;electric water heating appliance&apos;, instance=1),
- Appliance(type=&apos;spin dryer&apos;, instance=1),
- Appliance(type=&apos;electric furnace&apos;, instance=1),
- Appliance(type=&apos;sockets&apos;, instance=1),
- Appliance(type=&apos;sockets&apos;, instance=2),
- Appliance(type=&apos;air conditioner&apos;, instance=1),
- Appliance(type=&apos;sockets&apos;, instance=3),
- Appliance(type=&apos;sockets&apos;, instance=4)]</pre>
+<pre>[Appliance(type=&#39;fridge&#39;, instance=1),
+ Appliance(type=&#39;dish washer&#39;, instance=1),
+ Appliance(type=&#39;electric water heating appliance&#39;, instance=1),
+ Appliance(type=&#39;spin dryer&#39;, instance=1),
+ Appliance(type=&#39;electric furnace&#39;, instance=1),
+ Appliance(type=&#39;sockets&#39;, instance=1),
+ Appliance(type=&#39;sockets&#39;, instance=2),
+ Appliance(type=&#39;air conditioner&#39;, instance=1),
+ Appliance(type=&#39;sockets&#39;, instance=3),
+ Appliance(type=&#39;sockets&#39;, instance=4)]</pre>
 </div>
 
 </div>
@@ -330,7 +339,7 @@
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">mains</span> <span class="o">=</span> <span class="n">elec</span><span class="o">.</span><span class="n">mains</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">mains</span> <span class="o">=</span> <span class="n">elec</span><span class="o">.</span><span class="n">mains</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -338,8 +347,7 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -353,7 +361,7 @@
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">elec</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">elec</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">);</span>
@@ -367,7 +375,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1762,8 +1774,7 @@ TkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1778,7 +1789,7 @@ TkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fraction</span> <span class="o">=</span> <span class="n">elec</span><span class="o">.</span><span class="n">submeters</span><span class="p">()</span><span class="o">.</span><span class="n">fraction_per_meter</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fraction</span> <span class="o">=</span> <span class="n">elec</span><span class="o">.</span><span class="n">submeters</span><span class="p">()</span><span class="o">.</span><span class="n">fraction_per_meter</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">elec</span><span class="o">.</span><span class="n">get_appliance_labels</span><span class="p">(</span><span class="n">fraction</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">fraction</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">);</span>
@@ -1792,23 +1803,31 @@ TkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1/10 ElecMeter(instance=2, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;air conditioner&apos;, instance=1)])Using cached result from metadata.
-2/10 ElecMeter(instance=3, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;sockets&apos;, instance=1)])Using cached result from metadata.
-3/10 ElecMeter(instance=4, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;sockets&apos;, instance=2)])Using cached result from metadata.
-4/10 ElecMeter(instance=5, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;dish washer&apos;, instance=1)])Using cached result from metadata.
-5/10 ElecMeter(instance=6, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;spin dryer&apos;, instance=1)])Using cached result from metadata.
-6/10 ElecMeter(instance=7, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;electric furnace&apos;, instance=1)])Using cached result from metadata.
-7/10 ElecMeter(instance=8, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;sockets&apos;, instance=3)])Using cached result from metadata.
-8/10 ElecMeter(instance=9, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;sockets&apos;, instance=4)])Using cached result from metadata.
-9/10 ElecMeter(instance=10, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;fridge&apos;, instance=1)])Using cached result from metadata.
-10/10 ElecMeter(instance=11, building=11, dataset=&apos;WikiEnergy&apos;, appliances=[Appliance(type=&apos;electric water heating appliance&apos;, instance=1)])Using cached result from metadata.
+<pre>1/10 ElecMeter(instance=2, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;air conditioner&#39;, instance=1)])Using cached result from metadata.
+2/10 ElecMeter(instance=3, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;sockets&#39;, instance=1)])Using cached result from metadata.
+3/10 ElecMeter(instance=4, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;sockets&#39;, instance=2)])Using cached result from metadata.
+4/10 ElecMeter(instance=5, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;dish washer&#39;, instance=1)])Using cached result from metadata.
+5/10 ElecMeter(instance=6, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;spin dryer&#39;, instance=1)])Using cached result from metadata.
+6/10 ElecMeter(instance=7, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;electric furnace&#39;, instance=1)])Using cached result from metadata.
+7/10 ElecMeter(instance=8, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;sockets&#39;, instance=3)])Using cached result from metadata.
+8/10 ElecMeter(instance=9, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;sockets&#39;, instance=4)])Using cached result from metadata.
+9/10 ElecMeter(instance=10, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;fridge&#39;, instance=1)])Using cached result from metadata.
+10/10 ElecMeter(instance=11, building=11, dataset=&#39;WikiEnergy&#39;, appliances=[Appliance(type=&#39;electric water heating appliance&#39;, instance=1)])Using cached result from metadata.
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2520,8 +2539,7 @@ RU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2530,8 +2548,7 @@ RU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2539,8 +2556,7 @@ RU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2554,7 +2570,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">nilmtk.disaggregate.hart_85</span> <span class="kn">import</span> <span class="n">Hart85</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">nilmtk.disaggregate.hart_85</span> <span class="kn">import</span> <span class="n">Hart85</span>
 <span class="n">h</span> <span class="o">=</span> <span class="n">Hart85</span><span class="p">()</span>
 </pre></div>
 
@@ -2568,7 +2584,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">mains</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">mains</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2579,7 +2595,11 @@ RU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Finding Edges, please wait ...
 Edge detection complete.
@@ -2596,8 +2616,7 @@ Finished.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2611,7 +2630,7 @@ Finished.
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">steady_states</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">steady_states</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -2622,7 +2641,11 @@ Finished.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -2665,8 +2688,7 @@ Finished.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2680,7 +2702,7 @@ Finished.
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;Set1&quot;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;Set1&quot;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">mains</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">h</span><span class="o">.</span><span class="n">steady_states</span><span class="p">[</span><span class="s1">&#39;active average&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
@@ -2695,7 +2717,11 @@ Finished.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -3365,8 +3391,7 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3380,7 +3405,7 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">transients</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">transients</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -3391,7 +3416,11 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -3434,8 +3463,7 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3449,7 +3477,7 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">transients</span><span class="p">[</span><span class="s1">&#39;active transition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">transients</span><span class="p">[</span><span class="s1">&#39;active transition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">);</span>
 </pre></div>
@@ -3462,7 +3490,11 @@ giAIgiAIgiAIgiAIgiAIgiAIgtC3+P8TgVzaCHTXtgAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -3750,8 +3782,7 @@ AABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3765,7 +3796,7 @@ AABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">pair_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">pair_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -3776,7 +3807,11 @@ AABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -3837,8 +3872,7 @@ AABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3847,8 +3881,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3857,8 +3890,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3872,7 +3904,7 @@ AABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">h</span><span class="o">.</span><span class="n">centroids</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">h</span><span class="o">.</span><span class="n">centroids</span>
 </pre></div>
 
 </div>
@@ -3883,7 +3915,11 @@ AABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div style="max-height:1000px;max-width:1500px;overflow:auto;">
@@ -3918,8 +3954,7 @@ AABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3928,8 +3963,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3937,8 +3971,7 @@ AABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3952,7 +3985,7 @@ AABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">disag_filename</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;wikienergy-disag.h5&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">disag_filename</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;wikienergy-disag.h5&#39;</span><span class="p">)</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">HDFDataStore</span><span class="p">(</span><span class="n">disag_filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">h</span><span class="o">.</span><span class="n">disaggregate</span><span class="p">(</span><span class="n">mains</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 </pre></div>
@@ -3965,7 +3998,11 @@ AABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Finding Edges, please wait ...
 Edge detection complete.
@@ -3991,7 +4028,7 @@ States done
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -3999,8 +4036,7 @@ States done
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4008,8 +4044,7 @@ States done
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4023,7 +4058,7 @@ States done
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">disag</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">disag_filename</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">disag</span> <span class="o">=</span> <span class="n">DataSet</span><span class="p">(</span><span class="n">disag_filename</span><span class="p">)</span>
 <span class="n">disag_elec</span> <span class="o">=</span> <span class="n">disag</span><span class="o">.</span><span class="n">buildings</span><span class="p">[</span><span class="n">building_number</span><span class="p">]</span><span class="o">.</span><span class="n">elec</span>
 </pre></div>
 
@@ -4032,8 +4067,7 @@ States done
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4047,7 +4081,7 @@ States done
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">elec</span><span class="p">[</span><span class="s1">&#39;fridge&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Predicted&quot;</span><span class="p">,</span> <span class="s2">&quot;Ground truth&quot;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
@@ -4062,7 +4096,11 @@ States done
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -5284,8 +5322,7 @@ Ojr2i/8foMrzwQ+EO0EAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -5299,7 +5336,7 @@ Ojr2i/8foMrzwQ+EO0EAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">elec</span><span class="p">[</span><span class="s1">&#39;air conditioner&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Predicted&quot;</span><span class="p">,</span> <span class="s2">&quot;Ground truth&quot;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
@@ -5314,7 +5351,11 @@ Ojr2i/8foMrzwQ+EO0EAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -6132,8 +6173,7 @@ hBBCCCGEEEIIIYSQvcr/D8d08XJaqoc7AAAAAElFTkSuQmCC
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6142,8 +6182,7 @@ hBBCCCGEEEIIIYSQvcr/D8d08XJaqoc7AAAAAElFTkSuQmCC
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6157,7 +6196,7 @@ hBBCCCGEEEIIIYSQvcr/D8d08XJaqoc7AAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">elec</span><span class="p">[</span><span class="s1">&#39;electric furnace&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Predicted&quot;</span><span class="p">,</span> <span class="s2">&quot;Ground truth&quot;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
@@ -6172,7 +6211,11 @@ hBBCCCGEEEIIIYSQvcr/D8d08XJaqoc7AAAAAElFTkSuQmCC
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -6830,8 +6873,7 @@ URRFUZSVyP8HfhY2DFG4i98AAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -6845,7 +6887,7 @@ URRFUZSVyP8HfhY2DFG4i98AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">disag_elec</span><span class="p">[</span><span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">elec</span><span class="p">[</span><span class="s1">&#39;dish washer&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Predicted&quot;</span><span class="p">,</span> <span class="s2">&quot;Ground truth&quot;</span><span class="p">]);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Power (W)&quot;</span><span class="p">)</span>
@@ -6860,7 +6902,11 @@ URRFUZSVyP8HfhY2DFG4i98AAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -7231,8 +7277,7 @@ RK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -7241,8 +7286,7 @@ RK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -7250,7 +7294,10 @@ RK5CYII=
 
 </div>
 </div>
-</div></div><script>
+</div>
+ 
+
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

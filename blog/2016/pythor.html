@@ -48,14 +48,13 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 			    <div class="container" margin="5%">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -63,8 +62,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -73,8 +71,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -83,8 +80,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -92,8 +88,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -107,7 +102,7 @@
 
 <pre><code>LIBS = -lpcre -lbz2 -lz -lm -liconv</code></pre>
 <p>Next, I used Conda to install rpy2 following instructions on <a href="http://stackoverflow.com/questions/24987932/installing-rpy2-on-mac-osx-with-anaconda-python-3-4-and-r-3-1-installed-via-macp">this Stack Overflow question</a>.</p>
-<div class="highlight"><pre>conda skeleton pypi rpy2
+<div class="highlight"><pre><span></span>conda skeleton pypi rpy2
 conda build rpy2
 conda install rpy2 --use-local
 </pre></div>
@@ -115,8 +110,7 @@ conda install rpy2 --use-local
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -129,7 +123,7 @@ conda install rpy2 --use-local
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -143,7 +137,11 @@ conda install rpy2 --use-local
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Vendor:  Continuum Analytics, Inc.
 Package: mkl
@@ -165,7 +163,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -176,7 +174,11 @@ Message: trial mode expires today
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -248,7 +250,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -259,7 +261,11 @@ Message: trial mode expires today
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -355,7 +361,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">rpy2.robjects</span> <span class="kn">import</span> <span class="n">pandas2ri</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">rpy2.robjects</span> <span class="kn">import</span> <span class="n">pandas2ri</span>
 <span class="n">pandas2ri</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
 </pre></div>
 
@@ -364,8 +370,7 @@ Message: trial mode expires today
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -379,7 +384,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">rdf</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">py2ri</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rdf</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">py2ri</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -392,7 +397,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">rdf</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">rdf</span>
 </pre></div>
 
 </div>
@@ -403,25 +408,29 @@ Message: trial mode expires today
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;DataFrame - Python:0x11394ed40 / R:0x101e9ace0&gt;
 [Array, Array, Array, Array, Array]
-  X0: &lt;class &apos;rpy2.robjects.vectors.Array&apos;&gt;
+  X0: &lt;class &#39;rpy2.robjects.vectors.Array&#39;&gt;
   &lt;Array - Python:0x11395d7a0 / R:0x1016170a0&gt;
 [0.676890, -0.844250, 0.234617, ..., -1.022870, 0.460171, -0.778643]
-  X1: &lt;class &apos;rpy2.robjects.vectors.Array&apos;&gt;
+  X1: &lt;class &#39;rpy2.robjects.vectors.Array&#39;&gt;
   &lt;Array - Python:0x11395d7e8 / R:0x101618e00&gt;
 [-1.482087, -0.589331, 0.167176, ..., -0.354238, -0.052170, -0.086813]
-  X2: &lt;class &apos;rpy2.robjects.vectors.Array&apos;&gt;
+  X2: &lt;class &#39;rpy2.robjects.vectors.Array&#39;&gt;
   &lt;Array - Python:0x11395da28 / R:0x10162a600&gt;
 [2.043067, 0.120395, 0.480042, ..., -1.400252, -1.310542, 0.595479]
-  X3: &lt;class &apos;rpy2.robjects.vectors.Array&apos;&gt;
+  X3: &lt;class &#39;rpy2.robjects.vectors.Array&#39;&gt;
   &lt;Array - Python:0x11395db00 / R:0x10162f6a8&gt;
 [-1.010374, 1.735386, -0.640150, ..., 0.583008, -2.258022, 1.939031]
-  X4: &lt;class &apos;rpy2.robjects.vectors.Array&apos;&gt;
+  X4: &lt;class &#39;rpy2.robjects.vectors.Array&#39;&gt;
   &lt;Array - Python:0x11395dc20 / R:0x10166d8a8&gt;
 [0.065335, -3.189763, 1.277100, ..., -1.235120, 1.072535, 0.534892]</pre>
 </div>
@@ -437,7 +446,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">rdf</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">rdf</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -448,7 +457,11 @@ Message: trial mode expires today
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>          X0          X1         X2          X3         X4
 0  0.6768904 -1.48208689  2.0430667 -1.01037417  0.0653346
@@ -470,8 +483,7 @@ Message: trial mode expires today
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -485,7 +497,7 @@ Message: trial mode expires today
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="kn">as</span> <span class="nn">robjects</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="kn">as</span> <span class="nn">robjects</span>
 </pre></div>
 
 </div>
@@ -493,8 +505,7 @@ Message: trial mode expires today
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -506,8 +517,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -515,8 +525,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -532,7 +541,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">head_df</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">head_df</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -545,7 +554,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">head_df</span><span class="p">(</span><span class="n">rdf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">head_df</span><span class="p">(</span><span class="n">rdf</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -556,7 +565,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>          X0         X1        X2        X3         X4
 0  0.6768904 -1.4820869 2.0430667 -1.010374  0.0653346
@@ -570,8 +583,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -587,7 +599,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_summary</span> <span class="o">=</span>  <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">](</span><span class="n">rdf</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_summary</span> <span class="o">=</span>  <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">](</span><span class="n">rdf</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">r_summary</span><span class="p">)</span>
 </pre></div>
 
@@ -599,7 +611,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>       X0                X1                 X2                X3         
  Min.   :-1.1445   Min.   :-1.48209   Min.   :-1.4003   Min.   :-2.2580  
@@ -624,8 +640,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -633,8 +648,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -648,7 +662,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">faithful_pandas_df</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">&#39;faithful&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">faithful_pandas_df</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s1">&#39;faithful&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -661,7 +675,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">type</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -672,7 +686,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -690,7 +708,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">faithful_pandas_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">faithful_pandas_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -701,7 +719,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -750,8 +772,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -765,7 +786,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">faithful_r_df</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">py2ri</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">faithful_r_df</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">py2ri</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -773,8 +794,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -788,7 +808,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">](</span><span class="n">faithful_r_df</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;head&#39;</span><span class="p">](</span><span class="n">faithful_r_df</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -799,7 +819,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>  eruptions waiting
 1     3.600      79
@@ -816,20 +840,18 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Great, now let us fit a linear relationship bewteen <code>#eruptions</code> and <code>waiting</code> as follows:</p>
-<blockquote>$$\mathrm{eruptions} = \alpha + \beta\times\mathrm{waiting} + \epsilon$$
+<blockquote><p>$$\mathrm{eruptions} = \alpha + \beta\times\mathrm{waiting} + \epsilon$$</p>
 </blockquote>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -845,8 +867,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -860,7 +881,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">rpy2.robjects.packages</span> <span class="kn">import</span> <span class="n">importr</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">rpy2.robjects.packages</span> <span class="kn">import</span> <span class="n">importr</span>
 <span class="n">stats</span> <span class="o">=</span> <span class="n">importr</span><span class="p">(</span><span class="s1">&#39;stats&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -874,7 +895,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fit</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">lm</span><span class="p">(</span><span class="s1">&#39;eruptions ~ waiting&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">faithful_r_df</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">lm</span><span class="p">(</span><span class="s1">&#39;eruptions ~ waiting&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">faithful_r_df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -887,7 +908,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -898,11 +919,15 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre> [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;         
- [5] &quot;fitted.values&quot; &quot;assign&quot;        &quot;qr&quot;            &quot;df.residual&quot;  
- [9] &quot;xlevels&quot;       &quot;call&quot;          &quot;terms&quot;         &quot;model&quot;        
+<pre> [1] &#34;coefficients&#34;  &#34;residuals&#34;     &#34;effects&#34;       &#34;rank&#34;         
+ [5] &#34;fitted.values&#34; &#34;assign&#34;        &#34;qr&#34;            &#34;df.residual&#34;  
+ [9] &#34;xlevels&#34;       &#34;call&#34;          &#34;terms&#34;         &#34;model&#34;        
 
 </pre>
 </div>
@@ -912,8 +937,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -927,7 +951,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">residuals</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;residuals&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;residuals&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -935,8 +959,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -950,7 +973,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">residuals</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">residuals</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -961,7 +984,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[1] -0.50059190 -0.40989320 -0.38945216 -0.53191679 -0.02135959
 
@@ -973,8 +1000,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -988,7 +1014,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">residuals_numpy</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">residuals_numpy</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1001,7 +1027,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">residuals_numpy</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">residuals_numpy</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -1012,7 +1038,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1025,8 +1055,7 @@ If familiar with R and the R console, r is a little like a communication channel
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1040,7 +1069,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
@@ -1055,7 +1084,7 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">residuals_numpy</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">residuals_numpy</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1066,7 +1095,11 @@ If familiar with R and the R console, r is a little like a communication channel
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1079,7 +1112,11 @@ If familiar with R and the R console, r is a little like a communication channel
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1172,8 +1209,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1182,8 +1218,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1197,7 +1232,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">coeffs</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;coefficients&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">coeffs</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;coefficients&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1210,7 +1245,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1221,7 +1256,11 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(Intercept)     waiting 
 -1.87401599  0.07562795 
@@ -1239,7 +1278,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">type</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1250,7 +1289,11 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1268,7 +1311,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">coeffs_python</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">coeffs_python</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1281,7 +1324,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">coeffs_python</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">coeffs_python</span>
 </pre></div>
 
 </div>
@@ -1292,7 +1335,11 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[30]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1305,8 +1352,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1320,7 +1366,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">coeffs_python_names</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">coeffs</span><span class="o">.</span><span class="n">names</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">coeffs_python_names</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">coeffs</span><span class="o">.</span><span class="n">names</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">coeffs_python_names</span>
 </pre></div>
 
@@ -1332,11 +1378,15 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&apos;(Intercept)&apos;, &apos;waiting&apos;]</pre>
+<pre>[&#39;(Intercept)&#39;, &#39;waiting&#39;]</pre>
 </div>
 
 </div>
@@ -1345,8 +1395,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1360,7 +1409,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fit_eruptions</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;fitted.values&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fit_eruptions</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">rx2</span><span class="p">(</span><span class="s1">&#39;fitted.values&#39;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1368,8 +1417,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1383,7 +1431,7 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">[</span><span class="s1">&#39;waiting&#39;</span><span class="p">],</span> <span class="n">fit_eruptions</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">[</span><span class="s1">&#39;waiting&#39;</span><span class="p">],</span> <span class="n">fit_eruptions</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fitted&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="p">[</span><span class="s1">&#39;waiting&#39;</span><span class="p">],</span> <span class="n">faithful_pandas_df</span><span class="p">[</span><span class="s1">&#39;eruptions&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True eruptions&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Waiting&quot;</span><span class="p">)</span>
@@ -1398,7 +1446,11 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[33]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1407,15 +1459,23 @@ QBIEDgAgif8HcvgMD0eaE6MAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/Users/nipunbatra/anaconda/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
-  if self._edgecolors == str(&apos;face&apos;):
+  if self._edgecolors == str(&#39;face&#39;):
 </pre>
 </div>
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1730,8 +1790,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1745,7 +1804,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">last_5</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;tail&#39;</span><span class="p">](</span><span class="n">faithful_r_df</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">last_5</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;tail&#39;</span><span class="p">](</span><span class="n">faithful_r_df</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1758,7 +1817,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">last_5</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">last_5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1769,7 +1828,11 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>    eruptions waiting
 268     4.117      81
@@ -1791,7 +1854,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pred_r</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">last_5</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pred_r</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="n">last_5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1804,7 +1867,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">pred_r</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">pred_r</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -1815,7 +1878,11 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>     268      269      270      271      272 
 4.251848 1.604870 4.932499 1.604870 3.722452 
@@ -1833,7 +1900,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pred_python</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">pred_r</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pred_python</span> <span class="o">=</span> <span class="n">pandas2ri</span><span class="o">.</span><span class="n">ri2py</span><span class="p">(</span><span class="n">pred_r</span><span class="p">)</span>
 <span class="n">pred_python</span>
 </pre></div>
 
@@ -1845,7 +1912,11 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[38]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1858,8 +1929,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1873,7 +1943,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">class</span> <span class="nc">PYLM</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">PYLM</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="kn">from</span> <span class="nn">rpy2.robjects</span> <span class="kn">import</span> <span class="n">pandas2ri</span>
     <span class="n">pandas2ri</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
     <span class="kn">from</span> <span class="nn">rpy2.robjects.packages</span> <span class="kn">import</span> <span class="n">importr</span>
@@ -1917,7 +1987,7 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pylm</span> <span class="o">=</span> <span class="n">PYLM</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pylm</span> <span class="o">=</span> <span class="n">PYLM</span><span class="p">()</span>
 <span class="n">relationship</span><span class="o">=</span><span class="s1">&#39;eruptions~waiting&#39;</span>
 <span class="n">pylm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">relationship</span><span class="p">,</span> <span class="n">faithful_pandas_df</span><span class="p">)</span>
 </pre></div>
@@ -1930,7 +2000,11 @@ URRFyWhUUCmKoigZzf8HJqJevAuKysMAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[40]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1950,7 +2024,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pylm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pylm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">faithful_pandas_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -1961,7 +2035,11 @@ dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[41]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1974,8 +2052,7 @@ dtype: float64</pre>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1984,8 +2061,7 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1993,8 +2069,7 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2008,7 +2083,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_stl</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;stl&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_stl</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;stl&#39;</span><span class="p">]</span>
 <span class="n">r_ts</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span>
 </pre></div>
 
@@ -2022,7 +2097,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">85.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">12.</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">data</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
 <span class="n">data</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">85.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">12.</span> <span class="o">*</span> <span class="o">.</span><span class="mi">5</span>
@@ -2041,7 +2116,7 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -2052,7 +2127,11 @@ dtype: float64</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[44]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2061,7 +2140,11 @@ dtype: float64</pre>
 
 </div>
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -2330,8 +2413,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2350,7 +2432,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">convert_pd_freqstr</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">convert_pd_freqstr</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    df: pd.DataFrame with pd.DatetimeIndex type index</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2378,7 +2460,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">convert_pd_freqstr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">convert_pd_freqstr</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2389,7 +2471,11 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2407,7 +2493,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_ts_data</span> <span class="o">=</span> <span class="n">r_ts</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">)),</span> <span class="n">start</span><span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">IntVector</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">day</span><span class="p">]),</span> <span class="n">frequency</span><span class="o">=</span><span class="n">convert_pd_freqstr</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_ts_data</span> <span class="o">=</span> <span class="n">r_ts</span><span class="p">(</span><span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">)),</span> <span class="n">start</span><span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">IntVector</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">day</span><span class="p">]),</span> <span class="n">frequency</span><span class="o">=</span><span class="n">convert_pd_freqstr</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2420,7 +2506,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2431,7 +2517,11 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>             Jan         Feb         Mar         Apr         May         Jun
 1999  0.12909142  0.51848228  0.97211078  1.06376749  1.17150724  0.73897260
@@ -2460,8 +2550,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2475,7 +2564,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_plot</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_plot</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2"> function(data, filename){</span>
 <span class="s2"> png(filename=filename)</span>
 <span class="s2"> plot(data)</span>
@@ -2493,7 +2582,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_plot</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">,</span> <span class="s2">&quot;/Users/nipunbatra/Desktop/ts_1.png&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_plot</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">,</span> <span class="s2">&quot;/Users/nipunbatra/Desktop/ts_1.png&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2504,7 +2593,11 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[51]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[51]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -2523,7 +2616,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
 </pre></div>
 
 </div>
@@ -2536,7 +2629,7 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;/Users/nipunbatra/Desktop/ts_1.png&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;/Users/nipunbatra/Desktop/ts_1.png&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2547,7 +2640,11 @@ jARBEITKETESBEEQKkfESBAEQaic/w+x6jDaPLyxyAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[53]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[53]:</div>
+
+
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -2998,7 +3095,7 @@ oAB73DgsGgmQAAmQQHYJUICz27asGQmQAAmQgMcEKMAeNw6LRgIkQAIkkF0CFODsti1rRgIkQAIk
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_ts_decomposed</span> <span class="o">=</span> <span class="n">r_stl</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_ts_decomposed</span> <span class="o">=</span> <span class="n">r_stl</span><span class="p">(</span><span class="n">r_ts_data</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3011,7 +3108,7 @@ oAB73DgsGgmQAAmQQHYJUICz27asGQmQAAmQgMcEKMAeNw6LRgIkQAIkkF0CFODsti1rRgIkQAIk
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">r_plot</span><span class="p">(</span><span class="n">r_ts_decomposed</span><span class="p">,</span> <span class="s2">&quot;/Users/nipunbatra/Desktop/decomposed.png&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">r_plot</span><span class="p">(</span><span class="n">r_ts_decomposed</span><span class="p">,</span> <span class="s2">&quot;/Users/nipunbatra/Desktop/decomposed.png&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3022,7 +3119,11 @@ oAB73DgsGgmQAAmQQHYJUICz27asGQmQAAmQgMcEKMAeNw6LRgIkQAIkkF0CFODsti1rRgIkQAIk
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[55]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[55]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -3041,7 +3142,7 @@ oAB73DgsGgmQAAmQQHYJUICz27asGQmQAAmQgMcEKMAeNw6LRgIkQAIkkF0CFODsti1rRgIkQAIk
 <div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;/Users/nipunbatra/Desktop/decomposed.png&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;/Users/nipunbatra/Desktop/decomposed.png&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3052,7 +3153,11 @@ oAB73DgsGgmQAAmQQHYJUICz27asGQmQAAmQgMcEKMAeNw6LRgIkQAIkkF0CFODsti1rRgIkQAIk
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[56]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[56]:</div>
+
+
 
 
 <div class="output_png output_subarea output_execute_result">
@@ -3709,8 +3814,7 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -3724,7 +3828,7 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">class</span> <span class="nc">PYSTL</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">PYSTL</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
     <span class="k">def</span> <span class="nf">convert_pd_freqstr</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     
@@ -3788,7 +3892,7 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pystl</span> <span class="o">=</span> <span class="n">PYSTL</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pystl</span> <span class="o">=</span> <span class="n">PYSTL</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -3801,7 +3905,7 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pystl</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pystl</span><span class="o">.</span><span class="n">decompose</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -3812,7 +3916,11 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[59]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -3878,7 +3986,7 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pystl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pystl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -3889,7 +3997,11 @@ wB4YmVkkARIgARJwjwAdsHs2oUYkQAIkQAIeEPgfVsh7pxRyxOAAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -4909,8 +5021,7 @@ RK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -4919,7 +5030,10 @@ Please feel free to contribute to the project and provide your feedback.</p>
 
 </div>
 </div>
-</div></div><script>
+</div>
+ 
+
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

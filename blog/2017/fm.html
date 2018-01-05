@@ -48,7 +48,7 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
@@ -59,7 +59,7 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>wget http://www.grouplens.org/system/files/ml-100k.zip
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>wget http://www.grouplens.org/system/files/ml-100k.zip
 </pre></div>
 
 </div>
@@ -70,7 +70,11 @@
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--2017-04-17 17:25:06--  http://www.grouplens.org/system/files/ml-100k.zip
 Resolving www.grouplens.org... 128.101.34.146
@@ -87,11 +91,11 @@ Resolving files.grouplens.org... 128.101.34.146
 Connecting to files.grouplens.org|128.101.34.146|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 4924029 (4.7M) [application/zip]
-Saving to: &apos;ml-100k.zip&apos;
+Saving to: &#39;ml-100k.zip&#39;
 
 ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s    
 
-2017-04-17 17:25:14 (882 KB/s) - &apos;ml-100k.zip&apos; saved [4924029/4924029]
+2017-04-17 17:25:14 (882 KB/s) - &#39;ml-100k.zip&#39; saved [4924029/4924029]
 
 </pre>
 </div>
@@ -106,7 +110,7 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>unzip ml-100k.zip
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>unzip ml-100k.zip
 </pre></div>
 
 </div>
@@ -117,7 +121,11 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Archive:  ml-100k.zip
    creating: ml-100k/
@@ -157,7 +165,7 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">pandas</span>
 <span class="kn">import</span> <span class="nn">cPickle</span> <span class="kn">as</span> <span class="nn">pickle</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">mean_squared_error</span>
@@ -173,7 +181,7 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">fastFM.mcmc</span> <span class="kn">import</span> <span class="n">FMClassification</span><span class="p">,</span> <span class="n">FMRegression</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">fastFM.mcmc</span> <span class="kn">import</span> <span class="n">FMClassification</span><span class="p">,</span> <span class="n">FMRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span><span class="p">,</span> <span class="n">Ridge</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">dump_svmlight_file</span>
@@ -189,7 +197,7 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>cat ml-100k/README
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>cat ml-100k/README
 </pre></div>
 
 </div>
@@ -200,7 +208,11 @@ ml-100k.zip         100%[===================&gt;]   4.70M  1.14MB/s    in 5.5s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>SUMMARY &amp; USAGE LICENSE
 =============================================
@@ -321,7 +333,7 @@ u.item     -- Information about the items (movies); this is a tab separated
               list of
               movie id | movie title | release date | video release date |
               IMDb URL | unknown | Action | Adventure | Animation |
-              Children&apos;s | Comedy | Crime | Documentary | Drama | Fantasy |
+              Children&#39;s | Comedy | Crime | Documentary | Drama | Fantasy |
               Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi |
               Thriller | War | Western |
               The last 19 fields are the genres, a 1 indicates the movie
@@ -372,7 +384,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ml-100k/u.data&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;item&#39;</span><span class="p">,</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ml-100k/u.data&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;item&#39;</span><span class="p">,</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -385,7 +397,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;item&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="s1">&#39;item&#39;</span><span class="p">]]</span>
 <span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -397,7 +409,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[79]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[79]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -451,7 +467,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
 <span class="n">Y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -463,7 +479,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[82]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[82]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -511,7 +531,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </pre></div>
 
 </div>
@@ -524,7 +544,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">trainX</span><span class="p">,</span> <span class="n">testX</span><span class="p">,</span> <span class="n">trainY</span><span class="p">,</span> <span class="n">testY</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">trainX</span><span class="p">,</span> <span class="n">testX</span><span class="p">,</span> <span class="n">trainY</span><span class="p">,</span> <span class="n">testY</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -537,7 +557,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">trainX</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">trainX</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -548,7 +568,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[110]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[110]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -602,7 +626,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">)</span>
 <span class="n">trainX</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">trainX</span><span class="p">)</span>
 <span class="n">testX</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="mi">10</span>
@@ -620,7 +644,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -631,22 +655,26 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-112-53b2ed18efd7&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansired"> </span>clf<span class="ansiblue">.</span>predict<span class="ansiblue">(</span>testX<span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-112-53b2ed18efd7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>clf<span class="ansi-blue-fg">.</span>predict<span class="ansi-blue-fg">(</span>testX<span class="ansi-blue-fg">)</span>
 
-<span class="ansigreen">/Users/nipunbatra/anaconda/lib/python2.7/site-packages/fastFM/base.pyc</span> in <span class="ansicyan">predict</span><span class="ansiblue">(self, X_test)</span>
-<span class="ansigreen">     99</span>                              order=&quot;F&quot;)
-<span class="ansigreen">    100</span>         <span class="ansigreen">assert</span> sp<span class="ansiblue">.</span>isspmatrix_csc<span class="ansiblue">(</span>X_test<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 101</span><span class="ansired">         </span><span class="ansigreen">assert</span> X_test<span class="ansiblue">.</span>shape<span class="ansiblue">[</span><span class="ansicyan">1</span><span class="ansiblue">]</span> <span class="ansiblue">==</span> len<span class="ansiblue">(</span>self<span class="ansiblue">.</span>w_<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    102</span>         <span class="ansigreen">return</span> ffm<span class="ansiblue">.</span>ffm_predict<span class="ansiblue">(</span>self<span class="ansiblue">.</span>w0_<span class="ansiblue">,</span> self<span class="ansiblue">.</span>w_<span class="ansiblue">,</span> self<span class="ansiblue">.</span>V_<span class="ansiblue">,</span> X_test<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    103</span> <span class="ansiblue"></span>
+<span class="ansi-green-fg">/Users/nipunbatra/anaconda/lib/python2.7/site-packages/fastFM/base.pyc</span> in <span class="ansi-cyan-fg">predict</span><span class="ansi-blue-fg">(self, X_test)</span>
+<span class="ansi-green-intense-fg ansi-bold">     99</span>                              order=&#34;F&#34;)
+<span class="ansi-green-intense-fg ansi-bold">    100</span>         <span class="ansi-green-fg">assert</span> sp<span class="ansi-blue-fg">.</span>isspmatrix_csc<span class="ansi-blue-fg">(</span>X_test<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 101</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">assert</span> X_test<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">==</span> len<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>w_<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    102</span>         <span class="ansi-green-fg">return</span> ffm<span class="ansi-blue-fg">.</span>ffm_predict<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>w0_<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>w_<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>V_<span class="ansi-blue-fg">,</span> X_test<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    103</span> 
 
-<span class="ansired">AttributeError</span>: &apos;FMRegression&apos; object has no attribute &apos;w_&apos;</pre>
+<span class="ansi-red-fg">AttributeError</span>: &#39;FMRegression&#39; object has no attribute &#39;w_&#39;</pre>
 </div>
 </div>
 
@@ -659,7 +687,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ml-100k/u.user&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ml-100k/u.user&quot;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -670,7 +698,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[66]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -742,7 +774,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">DictVectorizer</span>
 <span class="kn">from</span> <span class="nn">pyfm</span> <span class="kn">import</span> <span class="n">pylibfm</span>
 
@@ -775,10 +807,14 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/Users/nipunbatra/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  &quot;This module will be removed in 0.20.&quot;, DeprecationWarning)
+  &#34;This module will be removed in 0.20.&#34;, DeprecationWarning)
 </pre>
 </div>
 </div>
@@ -792,7 +828,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -803,7 +839,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -821,7 +861,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X_train</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 </pre></div>
 
@@ -835,7 +875,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 
 </div>
@@ -848,7 +888,7 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fm</span> <span class="o">=</span> <span class="n">pylibfm</span><span class="o">.</span><span class="n">FM</span><span class="p">(</span><span class="n">num_factors</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_iter</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;regression&quot;</span><span class="p">,</span> <span class="n">initial_learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">learning_rate_schedule</span><span class="o">=</span><span class="s2">&quot;optimal&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">fm</span> <span class="o">=</span> <span class="n">pylibfm</span><span class="o">.</span><span class="n">FM</span><span class="p">(</span><span class="n">num_factors</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">num_iter</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;regression&quot;</span><span class="p">,</span> <span class="n">initial_learning_rate</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">learning_rate_schedule</span><span class="o">=</span><span class="s2">&quot;optimal&quot;</span><span class="p">)</span>
 
 <span class="n">fm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
@@ -861,7 +901,11 @@ mku.sh     -- A shell script to generate all the u data sets from u.data.
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Creating validation dataset of 0.01 of training for adaptive regularization
 -- Epoch 1
@@ -887,7 +931,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">preds</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -900,7 +944,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X_test</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X_test</span>
 </pre></div>
 
 </div>
@@ -911,11 +955,15 @@ Training MSE: 0.46475
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;9430x2623 sparse matrix of type &apos;&lt;type &apos;numpy.float64&apos;&gt;&apos;
+<pre>&lt;9430x2623 sparse matrix of type &#39;&lt;type &#39;numpy.float64&#39;&gt;&#39;
 	with 18858 stored elements in Compressed Sparse Row format&gt;</pre>
 </div>
 
@@ -930,7 +978,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">!</span>head -n <span class="m">10</span> ml-100k/u.user
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">!</span>head -n <span class="m">10</span> ml-100k/u.user
 </pre></div>
 
 </div>
@@ -941,7 +989,11 @@ Training MSE: 0.46475
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1|24|M|technician|85711
 2|53|F|other|94043
@@ -966,7 +1018,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">pyfm</span> <span class="kn">import</span> <span class="n">pylibfm</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pyfm</span> <span class="kn">import</span> <span class="n">pylibfm</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">DictVectorizer</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">train</span> <span class="o">=</span> <span class="p">[</span>
@@ -989,7 +1041,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1000,7 +1052,11 @@ Training MSE: 0.46475
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[48]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[48]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1021,7 +1077,7 @@ Training MSE: 0.46475
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">fm</span> <span class="o">=</span> <span class="n">pylibfm</span><span class="o">.</span><span class="n">FM</span><span class="p">()</span>
 <span class="n">fm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">fm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">transform</span><span class="p">({</span><span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;item&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}))</span>
@@ -1035,7 +1091,11 @@ Training MSE: 0.46475
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Creating validation dataset of 0.01 of training for adaptive regularization
 -- Epoch 1
@@ -1044,7 +1104,11 @@ Training log loss: 0.60801
 </div>
 </div>
 
-<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[50]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1062,7 +1126,7 @@ Training log loss: 0.60801
 <div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="kn">from</span> <span class="nn">fastFM.datasets</span> <span class="kn">import</span> <span class="n">make_user_item_regression</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">fastFM.datasets</span> <span class="kn">import</span> <span class="n">make_user_item_regression</span>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># This sets up a small test dataset.</span>
@@ -1079,7 +1143,7 @@ Training log loss: 0.60801
 <div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -1090,7 +1154,11 @@ Training log loss: 0.60801
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[69]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[69]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1114,7 +1182,7 @@ Training log loss: 0.60801
 <div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">y</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">y</span>
 </pre></div>
 
 </div>
@@ -1125,7 +1193,11 @@ Training log loss: 0.60801
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[70]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[70]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -1237,19 +1309,9 @@ Training log loss: 0.60801
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
+ 
 
-</div>
-</div>
-</div>
-
-</div></div><script>
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

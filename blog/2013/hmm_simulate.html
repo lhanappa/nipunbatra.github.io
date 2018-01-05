@@ -48,14 +48,13 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../index.html">Blog</a></li>
-                <li><a href="http://www.cs.virginia.edu/~nb2cz/files/cv.pdf">CV</a></li>
+                <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
         </div>
     </div>
 </nav>
 			    <div class="container" margin="5%">
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -63,8 +62,7 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -82,8 +80,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -97,7 +94,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="c1">#Setting Font Size as 20</span>
@@ -109,8 +106,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -124,7 +120,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="sd">&#39;&#39;&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Pi : Fair die is twice as likely as biased die</span>
 
 <span class="sd">A  : The die thrower likes to keep in one state (fair/biased), and the tranisition from </span>
@@ -146,8 +142,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -165,7 +160,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="sd">&#39;&#39;&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Returns next state according to weigted probability array. Code based on Weighted random generation in Python [4]</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="k">def</span> <span class="nf">next_state</span><span class="p">(</span><span class="n">weights</span><span class="p">):</span>
@@ -181,8 +176,7 @@ In a casino there may be two die- one fair and the other biased. The biased die 
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -197,7 +191,7 @@ given the <strong>pi</strong> vector.</p>
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
     <span class="n">count</span><span class="o">+=</span><span class="n">next_state</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
 <span class="nb">print</span> <span class="s2">&quot;Expected number of Fair states:&quot;</span><span class="p">,</span><span class="mi">1000</span><span class="o">-</span><span class="n">count</span>
@@ -212,7 +206,11 @@ given the <strong>pi</strong> vector.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Expected number of Fair states: 649
 Expected number of Biased states: 351
@@ -224,8 +222,7 @@ Expected number of Biased states: 351
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -234,8 +231,7 @@ Expected number of Biased states: 351
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -255,7 +251,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">create_hidden_sequence</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_hidden_sequence</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
     <span class="n">out</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">*</span><span class="n">length</span>
     <span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">next_state</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">length</span><span class="p">):</span>
@@ -275,8 +271,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -290,7 +285,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">hidden</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">create_hidden_sequence</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hidden</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">create_hidden_sequence</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
 <span class="n">observed</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">create_observation_sequence</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span><span class="n">B</span><span class="p">))</span>
 </pre></div>
 
@@ -304,7 +299,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="sd">&#39;&#39;&#39;Group all contiguous values in tuple. Recipe picked from Stack Overflow [5]&#39;&#39;&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;Group all contiguous values in tuple. Recipe picked from Stack Overflow [5]&#39;&#39;&#39;</span>
 <span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
     <span class="n">first</span> <span class="o">=</span> <span class="n">last</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -330,7 +325,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1">#Tuples of form index value, number of continuous values corresponding to Fair State</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Tuples of form index value, number of continuous values corresponding to Fair State</span>
 <span class="n">indices_hidden_fair</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">hidden</span><span class="o">==</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">tuples_contiguous_values_fair</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">indices_hidden_fair</span><span class="p">))</span>
 <span class="n">tuples_start_break_fair</span><span class="o">=</span><span class="n">create_tuple</span><span class="p">(</span><span class="n">tuples_contiguous_values_fair</span><span class="p">)</span>
@@ -351,8 +346,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -366,7 +360,7 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figsize</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figsize</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">));</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Observations&#39;</span><span class="p">);</span>
@@ -387,7 +381,11 @@ the next state by weighted sampling (by invoking next_state with argument as A[c
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
@@ -1502,8 +1500,7 @@ RK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1511,8 +1508,7 @@ RK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1526,7 +1522,10 @@ RK5CYII=
 
 </div>
 </div>
-</div></div><script>
+</div>
+ 
+
+</div><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
