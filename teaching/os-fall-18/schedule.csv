@@ -1,29 +1,23 @@
-Slo,Date,Topic,Slides,Reference,,
-,,,,,,
-1,2 Aug 18,Logistics & Introduction to OS,,Chapter 2,,
-2,,"Processes, Process API,",,"Chapter 4, 5",,
-3,, Direct execution,,"Chapter 6, 7",,
-4,,,,"Chapter 8, 9",,
-5,,,,Quiz 1,,
-6,,,,"Chapter 13, 14",,
-7,,,,"Chapter 15, 16",,
-8,,,,"Chapter 17, 18",,
-9,,,,"Chapter 19, 20",,
-10,,,,"Chapter 21, 22",,
-11,,,,Quiz 2,,
-12,,,,"Chapter 26, 27",,
-13,,,,"Chapter 28, 29",,
-14,,,,"Chapter 30, 31",,
-15,,,,"Chapter 32, 33",,
-16,,,,Quiz 3,,
-17,,,,"Chapter 36, 37",,
-18,,,,"Chapter 38, 39",,
-19,,,,"Chapter 40, 41",,
-20,,,,"Chapter 42, 43",,
-21,,,,"Chapter 44, 45",,
-23,,,,Quiz 4,,
-24,,,,,,
-25,,,,,,
-26,,,,,,
-27,,,,,,
-28,,,,,,
+Date,Topic,Slides,Reference
+2 Aug 18,Logistics & Introduction to OS,,Chapter 2
+,"Processes, Process API,",,"Chapter 4, 5"
+,Direct execution,,"Chapter 6, 7"
+,,,"Chapter 8, 9"
+,,,Quiz 1
+,,,"Chapter 13, 14"
+,,,"Chapter 15, 16"
+,,,"Chapter 17, 18"
+,,,"Chapter 19, 20"
+,,,"Chapter 21, 22"
+,,,Quiz 2
+,,,"Chapter 26, 27"
+,,,"Chapter 28, 29"
+,,,"Chapter 30, 31"
+,,,"Chapter 32, 33"
+,,,Quiz 3
+,,,"Chapter 36, 37"
+,,,"Chapter 38, 39"
+,,,"Chapter 40, 41"
+,,,"Chapter 42, 43"
+,,,"Chapter 44, 45"
+,,,Quiz 4
