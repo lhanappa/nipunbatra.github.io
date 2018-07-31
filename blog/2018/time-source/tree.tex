@@ -1,0 +1,52 @@
+\documentclass{standalone}
+\usepackage{forest}
+
+\begin{document}
+\begin{forest}
+ for tree={
+ 	calign = center,
+ 	edge path={
+ 		\noexpand\path[\forestoption{edge}](!u.parent anchor) -- +(6pt,0) |- (.child anchor)\forestoption{edge label};},
+ 	grow=0,
+ 	reversed, % tree direction
+ 	parent anchor=east,
+ 	child anchor=west, % edge anchors
+ 	anchor=west,
+ }
+[
+Time
+[Research
+[Meet students]
+[Write papers]
+[Write grants]
+[Present work]
+[Think hard]
+[Develop systems]
+]
+[Teaching
+[Prepare lectures]
+[Grade]
+[Supervise TAs]
+[Office Hours]
+[Take Labs]
+]
+[Service
+[Student thesis committees]
+[Academic
+[Review papers]
+[Organise conferences]
+]
+[Institute/Department
+[Student recruitment]
+[Faculty recruitment]
+[Organise seminars]
+]
+]
+[Administration
+[Reimbursements]
+[Plan research travel]
+[Miscellaneous]
+]
+]
+\end{forest}
+\end{document}
