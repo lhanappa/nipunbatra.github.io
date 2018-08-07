@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-printf("Current process ID is: %d\n", (int)getppid());
+printf("Parent of Current process has ID is: %d\n", (int)getppid());
 }
 
 
