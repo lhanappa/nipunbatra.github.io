@@ -1,7 +1,16 @@
-\documentclass{standalone}
+\documentclass[varwidth]{standalone}
 \usepackage{forest}
+\usepackage{pgfplots}
+\usepackage{fontspec}
+\setmainfont{Humor Sans}
+\usepackage{fullpage}
 
+
+\title{\large{The Illustrated Guide to How academics spend their time}\vspace{-40pt}}
+\date{}
 \begin{document}
+
+\maketitle
 \begin{forest}
  for tree={
  	calign = center,
@@ -12,6 +21,7 @@
  	parent anchor=east,
  	child anchor=west, % edge anchors
  	anchor=west,
+ 	align=center
  }
 [
 Time
@@ -30,15 +40,14 @@ Time
 [Develop systems]
 ]
 [Teaching
-[Prepare lectures]
+[Prepare lectures; assignments; etc.]
 [Teach]
 [Grade]
-[Supervise TAs]
+[Supervise Teaching Assistants]
 [Office Hours]
 [Take Labs]
 ]
 [Service
-[Student thesis committees]
 [Academic
 [Review papers]
 [Attend TPC meetings]
@@ -57,9 +66,8 @@ Time
 [Miscellaneous]
 ]
 [Meta
-[Plan all of the above]
+[Plan all of the above and always fall short]
 [Procrastrinate]
-[Dream about inbox 0]
 ]
 ]
 \end{forest}
