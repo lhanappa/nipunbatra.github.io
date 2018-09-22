@@ -1,3 +1,7 @@
+### Lab assignment for 26th Sept 2018 for CSE 301
+
+*NB: The bonus questions will not be discussed for the whole class. Some of them are open ended too. Every few minutes the instructor will solve the questions for the whole class. You can also find the solutions here.*
+
 1. Write a simple hello world program which uses multiple threads, each displaying its unique number/id. Run this program multiple times to show that the ordering between different threads can be different on different runs.
 
 **Bonus** Use `pstree`, `ps`, `top` to dig more information about these threads. You may need to add some delays in the code to be able to see the results of these commands.
@@ -20,4 +24,4 @@
 
 7. Questions 1-5 from the textbook Chapter 27 (Threads API).
 
-**Bonus** Study multi-processing and multi-threading in Python. Use `pool` to parallelize image processing on a large batch of images. Do some simple operation like batch convert from colour to grayscale. 
+**Bonus** Study multi-processing and multi-threading in Python. Use `pool` to parallelize image processing on a large batch of images. Do some simple operation like batch convert from colour to grayscale.
