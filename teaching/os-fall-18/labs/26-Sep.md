@@ -15,3 +15,7 @@
 5. Use load-store to implement a basic version of a lock. See Book 28.6. Re-run question 3 now with the lock before the critical section and unlocking after the critical section. Run the program and confirm that this lock still does not solve the issue of mutual exclusion. Use `objtool` to disassemble the code and find the critical section.
 
 **Bonus** Compute the time spent spinning on the CPU waiting for the other thread to release the lock.
+
+6. Use pthread mutex to write a fully correct working version of Question 3. Use `objtool` to disassemble the code and find out more.
+
+7. Questions 1-5 from the textbook Chapter 27 (Threads API).
