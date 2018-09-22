@@ -19,3 +19,5 @@
 6. Use pthread mutex to write a fully correct working version of Question 3. Use `objtool` to disassemble the code and find out more.
 
 7. Questions 1-5 from the textbook Chapter 27 (Threads API).
+
+**Bonus** Study multi-processing and multi-threading in Python. Use `pool` to parallelize image processing on a large batch of images. Do some simple operation like batch convert from colour to grayscale. 
