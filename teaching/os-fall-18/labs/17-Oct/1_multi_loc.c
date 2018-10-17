@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+/* Compile with gcc -o 1_multi_loc.out 1_multi_loc.c -pthread -lm*/
 int sum=0;
 
 struct arguments{
@@ -38,25 +39,23 @@ int main(){
 
 	printf("No of threads to be launched?\n");
 	scanf("%d",&n_thread);
-	//printf("ghtgb\n");
+	
 
 	n_elem = (int)ceil((double)1000000/(double)n_thread);
-	//printf("n_elem\n");
+	
 	last = 0;
 
 	for(i=0;i<n_thread;i++){
 		arg[i] = (struct arguments *)malloc(sizeof(struct arguments));
-		//printf("after agr");
+	
 		arg[i]->start = last;
 		if(i==n_thread)
 			arg[i]->stop = 1000000;
 		else
 			arg[i]->stop = last+n_elem;
 		last = last + n_elem;
-		//arg[i]->A = arr;
-		//printf("Before memcpy");
+
 		memcpy(arg[i]->A,arr,sizeof(arr));
-		//printf("afermemcpy");
 		rc = pthread_create(&t[i],NULL,sum_thread,arg[i]);
 		assert(rc==0);
 	}

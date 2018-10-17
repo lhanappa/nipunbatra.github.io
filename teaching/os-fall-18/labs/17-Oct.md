@@ -2,9 +2,11 @@
 
 1. Write a multi-threaded program with 2 threads to add the numbers in a large array. The first thread adds the first half elements, the second thread adds the second half elements. Also, write a non-threaded program to compute the result. Do you get the same answer? 
 
-Now, write a generalised version of this code, which can allow any number of threads.
+Now, write a generalised version of this code, which can allow any number of threads. If you use the ceil function from math.h, how do you compile the program?
 
 This program can be written in two ways - one create the array as a global variable; second pass the array as an argument to the n threads. Write both implementations. Do you get the same answer both the implementations?
+
+What is the maximum number of threads that works for you? What is thr maximum allowed number of threads?
 
 **Bonus** Study multi-processing and multi-threading in Python. Use `pool` to parallelize image processing on a large batch of images. Do some simple operation like batch convert from colour to grayscale.
 
