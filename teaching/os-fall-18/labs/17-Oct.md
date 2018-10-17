@@ -17,6 +17,8 @@ What is the maximum number of threads that works for you? What is thr maximum al
 ## Try to build a trivial lock without hardware support
 2. Use load-store to implement a basic version of a lock. See Book 28.6. Run the program and confirm that this lock still does not solve the issue of mutual exclusion. Use `objdump` to disassemble the code and find the critical section.
 
+Use `atomic` types in c11 to create correct concurrent thread program to increment counter. Reference: https://lumian2015.github.io/lockFreeProgramming/c11-features-in-currency.html
+
 **Bonus** Compute the time spent spinning on the CPU waiting for the other thread to release the lock.
 
 ## Build a correct lock!

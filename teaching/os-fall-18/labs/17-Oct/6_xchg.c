@@ -5,12 +5,19 @@
 int counter;
 int lock = 0;
 
-int TestAndSet(int lock,int val){
+char CompareAndSwap(int *ptr, int old, int new) {
 
-	asm("xchg $0 %%eax":"+m"(lock),"+a"(val));
-	return val;
-
+unsigned char ret;
+// Note that sete sets a ’byte’ not the word
+__asm__ __volatile__ ("  lock\n"
+"  cmpxchgl %2,%1\n"
+"  sete %0\n"
+: "=q" (ret), "=m" (ptr)
+: "r" (new), "m" (*ptr), "a" (old)
+: "memory");
+return ret;
 }
+
 
 void *counter_thread(void *arg){
 
