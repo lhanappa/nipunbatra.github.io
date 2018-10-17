@@ -15,12 +15,12 @@ What is the maximum number of threads that works for you? What is thr maximum al
 **Bonus** Vary the number of threads and compute time v/s number of threads. Vary the size of the array now to see if more threads means more performance.
 
 ## Try to build a trivial lock without hardware support
-2. Use load-store to implement a basic version of a lock. See Book 28.6. Re-run question 3 now with the lock before the critical section and unlocking after the critical section. Run the program and confirm that this lock still does not solve the issue of mutual exclusion. Use `objtool` to disassemble the code and find the critical section.
+2. Use load-store to implement a basic version of a lock. See Book 28.6. Run the program and confirm that this lock still does not solve the issue of mutual exclusion. Use `objdump` to disassemble the code and find the critical section.
 
 **Bonus** Compute the time spent spinning on the CPU waiting for the other thread to release the lock.
 
 ## Build a correct lock!
-3. Use pthread mutex to write a fully correct working version of a multi-threaded program which shares a variable count across multiple threads. Increment the variable in each thread for a given number of times in a loop.. Use `objtool` to disassemble the code and find out more.
+3. Use pthread mutex to write a fully correct working version of a multi-threaded program which shares a variable count across multiple threads. Increment the variable in each thread for a given number of times in a loop.. Use `objdump` to disassemble the code and find out more.
 
 ## Tools for threads and synchronisation
 4. Questions 1 and 2 from the textbook Chapter 27 (Threads API).

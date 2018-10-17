@@ -19,10 +19,9 @@ void *sum_thread(void *args){
 	int beg,end;
 	beg = arg->start;
 	end = arg->stop;
-	//printf("Inside beg %d %d",beg,end);
 	for(beg;beg<end;beg++){
 		sum = sum + arr[beg];
-		//printf("Inside sum %d",sum);
+
 	}
 
 }
@@ -42,8 +41,7 @@ int main(){
 	}
 
 	n_elem = (int)ceil((double)1000000/(double)n_thread);
-	//printf("%d",n_elem);
-	//first = 0
+
 	last = 0;
 
 	for(i=0;i<n_thread;i++){
