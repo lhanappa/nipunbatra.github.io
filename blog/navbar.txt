@@ -6,7 +6,11 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="../../publications.html">Publications</a></li>
                 <li><a href="../../teaching.html">Teaching</a></li>
+                <li><a href="../../people.html">People</a></li>
+                <li><a href="../../openings.html">Openings</a></li>
                 <li><a href="../../calendar.html">Calendar</a></li>
+                <li><a href="../../news.html">News</a></li>
+
                 <li><a href="../index.html">Blog</a></li>
                 <li><a href="../../files/cv.pdf">CV</a></li>
             </ul>
