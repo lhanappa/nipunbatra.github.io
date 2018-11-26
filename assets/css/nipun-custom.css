@@ -36,9 +36,9 @@ div.output_prompt {
 }
 
 .navbar {
-    font-size: 27px;
-    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-    font-weight: 500;
+    font-size: 24px;
+    font-family: "News Cycle", "Arial Narrow", sans-serif;
+    font-weight: 300;
 }
 
 a.anchor-link:link {
