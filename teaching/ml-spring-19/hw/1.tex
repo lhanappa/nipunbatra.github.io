@@ -1,9 +1,14 @@
 \documentclass[]{article}
 \usepackage{hyperref,verbatim}
 \usepackage[usenames, dvipsnames]{color}
+\usepackage{tgpagella} % text only
+\usepackage{mathpazo} 
+\usepackage[margin=0.6in]{geometry}
+\addtolength{\topmargin}{0in}
 
 
-\newcommand{\deadline}{Noon Jan 6}
+\newcommand{\deadline}{Noon Jan 12}
+\newcommand{\total}{18}
 
 %opening
 \title{Machine Learning\\Homework 1 \\(due \deadline)}
@@ -18,30 +23,35 @@
 	\parbox{\textwidth}{
 		Instructions\\
 		\begin{enumerate}
-			\item The deadline is a hard one. The form upload will close at sharp \deadline. There will be no extensions.
-			\item Total marks = 6 	
+			\item The deadline for full score is Jan 12. You can get 50\% credit for late submission (Jan 13th noon).
+			\item Total marks = \total
 			\item You have to type the assignment using a word processing engine, create a pdf and upload on the form. Please note that only pdf files will be accepted.
 			\item Name the submission as \texttt\{branch\}\_\{roll\_number\}\_\{name\}.pdf
-			\item All code/Jupyter notebooks must be put up as \href{https://gist.github.com/}{\textbf{secret gists}} and linked in the created pdf. Again, only secret gists. Not the public ones.
+			\item All code/Jupyter notebooks must be put up as \href{https://gist.github.com/}{\textbf{secret gists}} and linked in the created pdf. Again, only secret gists. Not public ones.
 			\item Any instances of cheating/plagiarism will not be tolerated at all. 
 			\item Cite all the pertinent references in IEEE format.
 			\item The least count of grading would be 0.5 marks. 
-			\item Some suggestions for plotting - WolframAlpha, Academo.Org, Geogebra, Matploltib, GNUplot, Matlab, Octave
-			\item You can find the course VM on the course web page. The root password is: 1234
+
 		\end{enumerate}
 	}
 }
 
 
 \begin{enumerate}
-	\item Write a Jupyter notebook to create a decision tree from scratch using the CART algorithm. The code should be written in native Python and not use existing libraries. The code should work for regression and classification tasks. As a hint: you may want to use dictionaries to encode the nested relationship amongst the different nodes, eg. tree = \{"feature1" :\{"val1": ..., "val2", ...\}\}.
-	\item Show the usage of your decision tree on the IRIS dataset. The first 70\% of the data should be used for training purposes and the remaining 30\% for test purposes. Show the accuracy of the decision tree you implemented on the test dataset.
-	\item Show the usage of your decision tree for the real estate price prediction regression problem: https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set
-	\item Compare the performance of your model with the decision tree module from scikit learn.
-	\item Use dtreeviz in conjunction with your library to show the learnt decision trees for the above two problems.
-	\item For the IRIS dataset classification problem, consider three variants of the decision tree algorithm. In the best case, we do an exhaustive search over all possible tree orders and choose the one which gives us the best accuracy on the train set. We use this model to predict for the test set. The second variant that we build gives us the worst performing model from the exhaustive enumeration. Compare the performance of the best order with the greedy order and with worst order.
-	\item Create some fake data to do some experiments on the runtime complexity of your decision tree algorithm. Create a dataset with N samples and M binary features. Vary M and N to plot the time taken for: 1) learning the tree, 2) predicting for test data. How do these results compare with theoretical time complexity for decision tree creation and prediction.
-	\item Submit your score on Kaggle for the blue book for bulldozers competition using decision tree: https://www.kaggle.com/c/bluebook-for-bulldozerss
+
+\item 	\begin{enumerate}
+		\item Write a Jupyter notebook to create a decision tree from scratch using the CART algorithm. The code should be written in native Python and not use existing libraries. The code should work for regression and classification tasks. As a hint: you may want to use dictionaries to encode the nested relationship amongst the different nodes, eg. tree = \`feature1' :\{`val1': ..., `val2', ...\}\}. \textbf{[4 marks]}
+		\item Show the usage of your decision tree on the IRIS dataset. The first 70\% of the data should be used for training purposes and the remaining 30\% for test purposes. Show the accuracy of the decision tree you implemented on the test dataset. \textbf{[1 mark]}
+		\item Use 5 fold cross-validation on the dataset. Using nested cross-validation find the optimum depth of the tree. \textbf{[2 marks]}
+	\end{enumerate} 
+	
+	\item Show the usage of your decision tree for the \href{https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set}{real estate price prediction regression} problem. \textbf{[1 mark]}
+	\item Compare the performance of your model with the decision tree module from scikit learn. \textbf{[1 mark]}
+	\item Use \href{https://github.com/parrt/dtreeviz}{dtreeviz} in conjunction with your library to show the learnt decision trees for the above two problems. What can you infer from this visualisation? \textbf{[2 marks]}
+	\item For the IRIS dataset classification problem, consider three variants of the decision tree algorithm. In the best case, we do an exhaustive search over all possible tree orders and choose the one which gives us the best accuracy on the train set. We use this model to predict for the test set. The second variant that we build gives us the worst performing model from the exhaustive enumeration. Compare the performance of the best order with the greedy order and with worst order. \textbf{[3 marks]}
+	\item Create some fake data to do some experiments on the runtime complexity of your decision tree algorithm. Create a dataset with N samples and M binary features. Vary M and N to plot the time taken for: 1) learning the tree, 2) predicting for test data. How do these results compare with theoretical time complexity for decision tree creation and prediction. \textbf{[2 marks]}
+	\item Submit your score on Kaggle for the blue book for \href{https://www.kaggle.com/c/bluebook-for-bulldozers}{bulldozers competition} using decision tree. \textbf{[2 marks]}
+
 	
 	
 	
@@ -52,7 +62,7 @@
 Some useful references for the homework:
 
 \begin{enumerate}
-	\item scikit learn page on decision trees: https://scikit-learn.org/stable/modules/tree.html
+	\item \href{https://scikit-learn.org/stable/modules/tree.html}{Scikit-learn page on decision trees}
 \end{enumerate}
 
 
