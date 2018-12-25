@@ -1,4 +1,6 @@
-\documentclass[colorlinks,linkcolor=true]{article}
+\documentclass[colorlinks]{article}
+\usepackage{graphicx}
+
 \usepackage{hyperref,verbatim}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage{tgpagella} % text only
@@ -8,7 +10,7 @@
 
 
 \newcommand{\deadline}{Noon Jan 12}
-\newcommand{\total}{18}
+\newcommand{\total}{20}
 
 %opening
 \title{Machine Learning\\Homework 1 \\(due \deadline)}
@@ -36,11 +38,29 @@
 	}
 }
 
+\begin{figure}
+	\centering
+	\vspace{-100pt}
+	\includegraphics[scale=0.5]{dt-dataset.pdf}
+	\vspace{-100pt}
+	\caption{PlayTennis Dataset}
+	\label{fig:dt-dataset}
+\end{figure}
+
 
 \begin{enumerate}
+	\item 	\begin{enumerate}
+		\item For the following dataset shown in Figure~\ref{fig:dt-dataset}(~same as the one we used in the class), now let us assume that date is also an input feature. Which attribute will be chosen as the root node for the decision tree? Do you think choosing this attribute is a good choice? Explain your answer.  \textbf{[1 mark]}
+		\item Handling missing values in decision trees: Assume that the Outlook of D3 is missing. Could you still learn a decision tree from this example. The set of features of interest are: Outlook, Temperature, Humidity and Wind. Clarifiying again - Day is \textbf{not} to be used as a feature in this sub part of the question. Refer to Tom Mitchell Chapter 3.7.4 last paragraph and show the learnt decision tree despite the missing Outlook values from D3.  \textbf{[1 mark]}
+	\end{enumerate}
+
+
 
 \item 	\begin{enumerate}
-		\item Write a Jupyter notebook to create a decision tree from scratch using the CART algorithm. The code should be written in native Python and not use existing libraries. The code should work for regression and classification tasks. As a hint: you may want to use dictionaries to encode the nested relationship amongst the different nodes, eg. tree = \`feature1' :\{`val1': ..., `val2', ...\}\}. \textbf{[4 marks]}
+	
+
+	
+		\item Write a Jupyter notebook to create a decision tree from scratch using the \href{https://www.stat.wisc.edu/~loh/treeprogs/guide/wires11.pdf}{CART algorithm}. The code should be written in native Python and not use existing libraries. The code should work for regression and classification tasks. As a hint: you may want to use dictionaries to encode the nested relationship amongst the different nodes, eg. tree = \`feature1' :\{`val1': ..., `val2', ...\}\}. \textbf{[4 marks]}
 		\item Show the usage of your decision tree on the IRIS dataset. The first 70\% of the data should be used for training purposes and the remaining 30\% for test purposes. Show the accuracy of the decision tree you implemented on the test dataset. \textbf{[1 mark]}
 		\item Use 5 fold cross-validation on the dataset. Using nested cross-validation find the optimum depth of the tree. \textbf{[2 marks]}
 	\end{enumerate} 
