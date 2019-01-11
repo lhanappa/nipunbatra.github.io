@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 JAN 2019 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 JAN 2019 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -362,35 +362,32 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
  [2 <./dt-dataset.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
  (./1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 110.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
  ) 
 Here is how much of TeX's memory you used:
- 6026 strings out of 492995
- 90446 string characters out of 6132704
- 184655 words of memory out of 5000000
+ 6010 strings out of 492995
+ 90344 string characters out of 6132704
+ 184634 words of memory out of 5000000
  9484 multiletter control sequences out of 15000+600000
- 20261 words of font info for 57 fonts, out of 8000000 for 9000
+ 17746 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,7n,32p,599b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,7n,32p,596b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017
-/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on 1.pdf (2 pages, 253292 bytes).
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on 1.pdf (2 pages, 230834 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
- 34 named destinations out of 1000 (max. 500000)
+ 81 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
