@@ -1,21 +1,20 @@
-\documentclass[colorlinks,linkcolor=true]{article}
+\documentclass[colorlinks]{article}
+\usepackage{graphicx}
+
 \usepackage{hyperref,verbatim}
 \usepackage[usenames, dvipsnames]{color}
-\usepackage{amsmath}
 \usepackage{tgpagella} % text only
 \usepackage{mathpazo} 
 \usepackage[margin=0.6in]{geometry}
 \addtolength{\topmargin}{0in}
 
 
-\newcommand{\deadline}{Noon }
-\newcommand{\total}{}
-
-
-
+\newcommand{\deadline}{Noon Jan 27}
+\newcommand{\extdeadline}{Noon Jan 29}
+\newcommand{\total}{20}
 
 %opening
-\title{Machine Learning\\Homework 2 \\ (Regression) \\(due \deadline)}
+\title{Machine Learning\\Homework 2 : Ensemble Methods\\(due \deadline)}
 \author{}
 \date{}
 
@@ -27,93 +26,70 @@
 	\parbox{\textwidth}{
 		Instructions\\
 		\begin{enumerate}
-			\item The deadline for full score is  You can get 50\% credit for late submission ...).
+			\item In case you are unfamiliar with the Python data ecosystem (NumPy, Pandas), you are recommended to study the first four chapters of the \href{https://jakevdp.github.io/PythonDataScienceHandbook/}{Python data science handbook}. A doubt clearing session would be organised in case you have any difficulties in the data science ecosystem.
+			\item The deadline for full score is \deadline. You can get 50\% credit for late submission (\extdeadline).
 			\item Total marks = \total
 			\item You have to type the assignment using a word processing engine, create a pdf and upload on the form. Please note that only pdf files will be accepted.
-			\item Name the submission as \texttt\{branch\}\_\{roll\_number\}\_\{name\}.pdf
-			\item All code/Jupyter notebooks must be put up as \href{https://gist.github.com/}{\textbf{secret gists}} and linked in the created pdf. Again, only secret gists. Not public ones.
+			\item All code/Jupyter notebooks must be put up as \href{https://gist.github.com/}{\textbf{secret gists}} and linked in the created pdf submission. Again, only secret gists. Not public ones.
 			\item Any instances of cheating/plagiarism will not be tolerated at all. 
 			\item Cite all the pertinent references in IEEE format.
 			\item The least count of grading would be 0.5 marks. 
-			
+
 		\end{enumerate}
 	}
 }
 
 
+
+
 \begin{enumerate}
-	\item What is the time complexity of linear regression? Why?
-	\item \begin{enumerate}
-		\item Derive an analytical solution for linear regression using $\ell_1$ loss: $|y-X\theta|$. If you cannot solve it analtically (derive a solution similar to the normal equation), explain why? 
-		\item Implement a gradient descent based solution. For computing the gradients automatically, use \href{https://github.com/HIPS/autograd}{Autograd}. Create a matplotlib animation to show the learnt line for the following data. The animation should capture the following: i) gradient reducing over time; ii) the fit becoming better over time.
-		\item Describe scenarios when you will use $\ell_0$, $\ell_1$ and $\ell_2$ loss.
-	\end{enumerate}
-	\item \begin{enumerate}
-		\item What is the difference between multi-colinearity and co-linearity? 
-		\item 	For the following X and y, use scikit-learn to learn a linear model. Solve the problem using normal equations. You may find that one of the matrix in the normal equation is non-invertible. Why can scikit-learn implementation still correctly solve this regression problem?
-	\end{enumerate}
-	
-
-	
-$$X = \begin{bmatrix}
-
-	
-	1       & 2 \\
-    2      &  4  \\
-    3      &  6  \\
-    4      &  8  \\
-
-	\end{bmatrix}$$
-	and 
-	
-	$$Y = \begin{bmatrix}
-	
-	
- 2 \\
-  3  \\
-  4  \\
-	5  \\
-	
-	\end{bmatrix}$$
 
 
-	
-	\item 
-\begin{enumerate}
-	\item 	Show the usage of scikit learn's linear regression module for the real estate price prediction \href{https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set}{regression problem}.  What is the RMS error on the test set? 
-	\item Based on the regression co-efficients what can you comment about the importance of different features? Is it correct to assume that larger co-efficients means more important feature?
-	\item Now, standardize the dataset to have all features on a scale of 0 to 1. Re-learn the regression co-efficients and now comment on the importance of different features.
-	\item Use cross-validation to find the optimal set of features to use for regression. For simplicity, say you feature sets of size 1, 2, 3, or 4. What is the optimal feature set as per the validation set and how does it perform on the test set wrt the model learnt on the entire feature set?
-	
-\end{enumerate}
+
+	 \item \begin{enumerate}
+	 	\item Extend the decision tree you created in first assignment to now implement random forests.  \textbf{[2 marks]}
+	 	\item Now create a parallelised version of the above where different trees can be built in parallel. You can use \href{https://sebastianraschka.com/Articles/2014_multiprocessing.html}{this article} as a reference. \textbf{[1 mark]}
+	 	\item Using simulations compare the performance of serial and parallel versions of your implementation, i.e. as you increase parallelisation do you get performance benefits? \textbf{[1 mark]}
+	 	\item Now use your random forest implementation on the IRIS dataset. Like before, the first 70\% of the data should be used for trainining and 30\% for test purposes. Compare the accuracy v/s decision tree for the following parameters: i) \# of estimators = 20, ii) \# feature choices to use = $\sqrt(n)$ where $n$ indicates the total number of features available.  \textbf{[1 mark]}
+	 	\item Now use 5-fold cross-validation on the IRIS dataset. Using nested cross-validation find the optimum number of estimators in the set of [1, 2, 5, 10, 50, 100] estimators.  \textbf{[1 mark]}
+	 \end{enumerate}
+ 
+	\item Submit your score on Kaggle (IITGN internal competition) for the blue book for \href{https://www.kaggle.com/c/iitgnml/}{bulldozers competition} using a) decision tree and b) random forests. You are free to use scikit-learn for this competition. 
+\textbf{[5 marks]}
 
 \item \begin{enumerate}
-	\item Implement the RANSAC algorithm from scratch. Do not use the inbuilt scikit-learn version. However, it should be a drop-in replacement for scikit-learn's version. Create a Jupyter notebook showing its utility over vanilla Linear regression on the following dataset.
-	\item Use your RANSAC implementation to do image stitching as done in this \href{https://www.pyimagesearch.com/2016/01/11/opencv-panorama-stitching/}{post}. You are not expected to understand the details of the post and can directly borrow the code. This exercise is to warm you up to some practical applications of RANSAC.
+	\item Re-encode the IRIS dataset class as 'setosa' and 'not-setosa'. Now apply ADABoost (on depth-1 decision trees as weak learner) while considering only 'sepal length' and 'petal width' as the features. Train on 100\% of the data and create a Matplotlib animation for the first 8 iterations of ADAboost. The title of the plot should show the iteration number and the accuracy on the train set. The plot should color the 'setosa' and 'not-setosa' points differently and their marker size should correspond to their weights as per the ADABoost algortihm. \textbf{[2 marks]}
+	\item Now, add some 'noise' to the above dataset, i.e. add some 'setosa' points to the vicinity of the 'not-setosa' points and vice-versa. A human should be able to recorgnise these as outliers. Run the animation on this dataset and comment on the behaviour of ADABoost. \textbf{[2 marks]}
 \end{enumerate}
 
-\item Create a \href{https://ipywidgets.readthedocs.io/en/stable/examples/Widget\%20Basics.html}{Jupyter widget} for depicting the impact of coefficient of regularisation on LASSO and Ridge regression. Use the LASSO and Ridge regression implementations from scikit-learn.
 
-Create a 1X2 subplot matrix in Matplotlib. The columns are for LASSO and Ridge regression and show the linear fit for the two algorithms given the identical dataset. A common regularisation co-efficient ($\lambda$) drives the regularisation in both these cases. Export a GIF recording of the Jupyter widget in action where you vary $\lambda$ on a log-scale from $10^{-4}$ to $10^{4}$. Download the dataset from here.
+\item \begin{enumerate}
+	\item Create a dataset of 50 points where y = mx + c +  random noise. Ensure that the noise is significant compared to the trend in the data. Plot this data using Matplotlib. \textbf{[1 mark]}
+	\item Using this \href{https://www.scipy-lectures.org/intro/numpy/auto_examples/plot_polyfit.html}{article} as a reference, plot a 5 degree fit for the data \textbf{[1 mark]}
+	\item Illustrate the concept of bagging on this dataset. For $n$=100 rounds of bagging, fit 5 degree curve and comment on the average (bagged) regressor. Is less prone to variance \textbf{[1 mark]}
+\end{enumerate}
 
-\item 	Show the usage of scikit learn's linear regression module on Ridge regression for the real estate price prediction \href{https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set}{regression problem}.  Use cross-validation to find the optimum regularisation co-efficient ($\lambda$).
 
+\item \begin{enumerate}
+	\item Write a program (without using any builtin function) to randomly choose between a list of N numbers [1, ..., N]. You are free to use any algorithm for the same. The goal of this exercise is to enable you to understand how computers would randomly choose from a set of choices. You would used such a routine to implement bagging.\textbf{[1 mark]} 
+	\item Invoke the above program 1000 times where N = 100. Plot the distribution of the generated random numbers. Do you get a roughly uniform distribution?\textbf{[1 mark]} 
+\end{enumerate}
 
 
 
 	
 	
+	
 
 \end{enumerate}
+
 
 Some useful references for the homework:
 
 \begin{enumerate}
-	\item \href{https://www.youtube.com/watch?v=BpOKB3OzQBQ}{A video on RANSAC algorithm}
+	\item \href{https://scikit-learn.org/stable/modules/tree.html}{Scikit-learn page on decision trees}
+		\item \href{https://scikit-learn.org/stable/modules/ensemble.html}{Scikit-learn page on ensemble methods}
 \end{enumerate}
-
-
-
 
 
 
