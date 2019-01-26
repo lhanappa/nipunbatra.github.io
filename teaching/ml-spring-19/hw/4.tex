@@ -10,7 +10,7 @@
 
 \newcommand{\deadline}{Midnight Feb 5 }
 \newcommand{\extdeadline}{Midnight Feb 7}
-\newcommand{\total}{22}
+\newcommand{\total}{20}
 
 %opening
 \title{Machine Learning\\Homework 3 : Regression - I\\(due \deadline)}
@@ -107,7 +107,7 @@ $$Y = \begin{bmatrix}
 
 \item Based on the regression co-efficients what can you comment about the importance of different features? Is it correct to assume that larger co-efficients means more important feature?  \textbf{[1 mark]}
 \item Now, standardize the dataset to have all features on a scale of 0 to 1. Re-learn the regression co-efficients and now comment on the importance of different features.  \textbf{[1 mark]}
-\item What is the distribution of the residuals?  \textbf{[1 mark]}
+
 \item Use cross-validation to find the optimal set of features to use for regression. 
 \begin{enumerate}
 	\item Using all possible feature sets of length 1, 2, 3, or 4, what is the optimal feature set as per the validation set and how does this set of features perform on the test set wrt the model learnt on the entire feature set?  \textbf{[1 mark]}
@@ -136,15 +136,42 @@ y = 1*x**5 + 3*x**4 - 100*x**3 + 8*x**2 -300*x - 1e5 + np.random.randn(len(x))*1
 Now, we want to learn a polynomial function of degree $p$ on this dataset, i.e. $y = \theta_0 + \theta_1 \times x^1 + \theta_2 \times x^2 + ... \theta_p \times x^p $. We can use our developed linear regression implementations for doing so, by transforming our dataset and creating the matrix X containing columns corresponding to $x^0$, $x^1$, $x^2$, ..., $x^p$.
 Using any of your implementations learn the regression coefficients for $p=5$ and $p=4$. How close are your coefficients for $p=5$ to the ones used to generate the data? \textbf{[2 marks]}
 
-\item The following question is to aid our understanding of gradient descent. We will be reusing the data from Q1. 
-\begin{enumerate}
-	\item Create a contour plot in the $\theta_0$ and $\theta_1$ space of the residual sum of squares \textbf{[1 mark]}
-	\item Create a Matplotlib animation where the plot contains two columns: the first one being the contour plot and the second one being the linear regression fit on the data. The different frames in the animation correspond to different iterations of gradient descent applied on the dataset to learn $\theta_0$ and $\theta_1$. For each iteration, draw the current value of $\theta_0$ and $\theta_1$ on the contour plot and also an arrow to the next $\theta_0$ and $\theta_1$ as learnt by gradient update rule. Correspondingly draw the $y = \theta_0 + \theta_1\times x$ line on the other subplot showing the scatter plot. The overall title of the plot show be the iteration number and the residual sum of squares. You are free to use any gradient desent implementation. \textbf{[2 marks]}
+\item The following question is to aid our understanding of gradient descent. 
+	
+	\item What is the time complexity of linear regression? Why?
+	\item \begin{enumerate}
+		\item Derive an analytical solution for linear regression using $\ell_1$ loss: $|y-X\theta|$. If you cannot solve it analtically (derive a solution similar to the normal equation), explain why? 
+		\item Implement a gradient descent based solution. For computing the gradients automatically, use \href{https://github.com/HIPS/autograd}{Autograd}. Create a matplotlib animation to show the learnt line for the following data. The animation should capture the following: i) gradient reducing over time; ii) the fit becoming better over time.
+		\item Describe scenarios when you will use $\ell_0$, $\ell_1$ and $\ell_2$ loss.
+	\end{enumerate}
+	\item \begin{enumerate}
+		\item What is the difference between multi-colinearity and co-linearity? 
+	
+
+\item \begin{enumerate}
+	\item Implement the RANSAC algorithm from scratch. Do not use the inbuilt scikit-learn version. However, it should be a drop-in replacement for scikit-learn's version. Create a Jupyter notebook showing its utility over vanilla Linear regression on the following dataset.
+	\item Use your RANSAC implementation to do image stitching as done in this \href{https://www.pyimagesearch.com/2016/01/11/opencv-panorama-stitching/}{post}. You are not expected to understand the details of the post and can directly borrow the code. This exercise is to warm you up to some practical applications of RANSAC.
 \end{enumerate}
+
+\item Create a \href{https://ipywidgets.readthedocs.io/en/stable/examples/Widget\%20Basics.html}{Jupyter widget} for depicting the impact of coefficient of regularisation on LASSO and Ridge regression. Use the LASSO and Ridge regression implementations from scikit-learn.
+
+Create a 1X2 subplot matrix in Matplotlib. The columns are for LASSO and Ridge regression and show the linear fit for the two algorithms given the identical dataset. A common regularisation co-efficient ($\lambda$) drives the regularisation in both these cases. Export a GIF recording of the Jupyter widget in action where you vary $\lambda$ on a log-scale from $10^{-4}$ to $10^{4}$. Download the dataset from here.
+
+\item 	Show the usage of scikit learn's linear regression module on Ridge regression for the real estate price prediction \href{https://archive.ics.uci.edu/ml/datasets/Real+estate+valuation+data+set}{regression problem}.  Use cross-validation to find the optimum regularisation co-efficient ($\lambda$).
+
+
+
+
+	
 	
 
 \end{enumerate}
 
+Some useful references for the homework:
+
+\begin{enumerate}
+	\item \href{https://www.youtube.com/watch?v=BpOKB3OzQBQ}{A video on RANSAC algorithm}
+\end{enumerate}
 
 
 
@@ -152,7 +179,7 @@ Using any of your implementations learn the regression coefficients for $p=5$ an
 
 
 
-
+\end{enumerate}
 
 
 \end{document}
