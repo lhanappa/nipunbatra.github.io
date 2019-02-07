@@ -64,8 +64,10 @@
 	using:
 	\begin{enumerate}
 		\item Normal equations or matrix method \textbf{[1 mark]}
-		\item Gradient desent where initial values of $\theta_0, \theta_1)$ is (0, 0) and step size (or learning rate) is $\alpha=0.1$. Show the calculations for initial 5 iterations. \textbf{[1 mark]}
-		\item Using the formula in terms of covariance and variance \textbf{[1 mark]}
+		\item Gradient desent where initial values of $\theta_0, \theta_1)$ is (0, 0) and step size (or learning rate) is $\alpha=0.1$. Show the calculations for initial 5 iterations. \textbf{[1 mark]} \\
+		\textbf{EDIT}: Does the cost/objective diverge? Are you using residual sum of squares (sum of squared errors)? Maybe you want to try using mean of squared errors as the objective? Or, use a small learning rate $\alpha$.
+		\item Using the formula in terms of covariance and variance \textbf{[1 mark]} 
+		\
 		
 	\end{enumerate}
 
@@ -107,7 +109,8 @@ $$Y = \begin{bmatrix}
 
 \item Based on the regression co-efficients what can you comment about the importance of different features? Is it correct to assume that larger co-efficients means more important feature?  \textbf{[1 mark]}
 \item Now, standardize the dataset to have all features on a scale of 0 to 1. Re-learn the regression co-efficients and now comment on the importance of different features.  \textbf{[1 mark]}
-\item What is the distribution of the residuals?  \textbf{[1 mark]}
+\item What is the distribution of the residuals?  \textbf{[1 mark]} \\
+\textbf{EDIT:} Hint - is it a normal distribution? or, lognormal, or ...?
 \item Use cross-validation to find the optimal set of features to use for regression. 
 \begin{enumerate}
 	\item Using all possible feature sets of length 1, 2, 3, or 4, what is the optimal feature set as per the validation set and how does this set of features perform on the test set wrt the model learnt on the entire feature set?  \textbf{[1 mark]}
@@ -119,7 +122,9 @@ $$Y = \begin{bmatrix}
 \begin{enumerate}
 	\item Write a function \texttt{normalEquationRegression(X, y)} where $X$ is our feature matrix containing $N$ samples (rows) and $d$ features (columns) and $y$ is our output vector containing $N$ samples. This function returns a vector $\theta$ containing $d+1$ rows. You are free to use numpy's matrix inverse, determinant and multiplication routines. \textbf{[1 mark]}
 	\item Write a function \texttt{gradientDescentRegression(X, y, alpha = 0.1)} to learn the regression coefficients using gradient descent. You have to write the formulae for gradient wrt the different $\theta_j \forall j \in (1, ..d)$ \textbf{[1 mark]}
-	\item Write a function \texttt{gradientDescentAutogradRegression(X, y, alpha = 0.1)} to learn the regression coefficients using gradient descent. Instead of writing the formulae for computing gradients by yourself, you will use \href{https://github.com/HIPS/autograd}{Autograd} to automatically do that for you. \textbf{[1 mark]}
+	\item Write a function \texttt{gradientDescentAutogradRegression(X, y, alpha = 0.1)} to learn the regression coefficients using gradient descent. Instead of writing the formulae for computing gradients by yourself, you will use \href{https://github.com/HIPS/autograd}{Autograd} to automatically do that for you. \textbf{[1 mark]} \\
+		\textbf{EDIT:}  In the above function you solved earlier: \texttt{gradientDescentRegression(X, y, alpha = 0.1)}, you manually computed the formulae for gradients and plugged that into gradient descent. In this version, you will use autograd to compute the gradient of the cost or objective function (which is sum of squared errors or mean of squared errors) wrt $\theta's$.
+
 	\item Write a function \texttt{gradientDescentPyTorchRegression(X, y, alpha = 0.1)} to learn the regression coefficients using gradient descent. Instead of numpy, you would now be using PyTorch. This question will set the ground for your project and future assignment. Similar to Autograd linked in the previous question, PyTorch also has an automatic gradient computation routine that you should make use of. Please note that do not use \texttt{nn.Linear()} for this question. \textbf{[1 mark]}
 	\item Illustrate the usage of all of your above four versions on the real estate price dataset in Q3. Report the time taken and accuracy for the four implementations compared with scikit-learn inbuilt function. Use all features from the dataset for all the methods. \textbf{[2 marks]}
 \end{enumerate}
