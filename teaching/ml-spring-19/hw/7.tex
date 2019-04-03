@@ -10,7 +10,7 @@
 
 \newcommand{\deadline}{Midnight April 9}
 \newcommand{\extdeadline}{Midnight April 10}
-\newcommand{\total}{8}
+\newcommand{\total}{14}
 
 %opening
 \title{Machine Learning\\Homework 7 : SVM\\(due \deadline)}
@@ -45,36 +45,31 @@
 \item \begin{enumerate}
 	
 \item Implement a function for hard margin SVM in primal form using cvxpy. For keeping this task simple assume w is two dimensional, i.e. $\hat{y(x)} = SIGN(w_1x_1 + w_2x_2 + b)$ where x and w are both two dimensional vectors \textbf{[2 marks]}
-\item Show the usage of your implementation on the IRIS dataset. For all our experiments, we will only be making use of sepal-length and petal-width as the two features. We have only two classes - Setosa and Not-Setosa. This problem is linearly separable. \begin{enumerate}
-	\item  For showing your implementation, train the hard margin SVM using all the data. \textbf{[1 marks]}
+\begin{enumerate}
+	\item Show the usage of your implementation on the IRIS dataset. We will only be making use of sepal-length and petal-width as the two features. We have only two classes - Setosa and Not-Setosa. This problem is linearly separable. For showing your implementation, train the hard margin SVM using all the data. \textbf{[1 marks]}
 	\item cvxpy also \href{https://www.cvxpy.org/tutorial/advanced/index.html}{allows} you to see the dual values. Can you compute the dual values? What do they mean? \textbf{[1 marks]}
-	\item Plot the decision boundary in dark black and the margins in dotted line. Encircle the support vector points. \textbf{[1 marks]}
+	\item Plot the decision boundary (separating hyperplane) in dark black and the margins in dotted line. Encircle the support vector points. \textbf{[1 marks]}
+	\item Plot the decision boundary in dark black and the margins in dotted line. This time use sklearn's SVM with linear kernel. Encircle the support vector points. Do you get the same answer as when you use your own SVM?\textbf{[1 marks]}
 	\item If you throw away all the points except the support vectors does your decision boundary remain the same? Why? \textbf{[1 marks]}
 \end{enumerate}
 
-\item Implement a function for soft margin SVM in primal form using cvxpy, but formulated as hinge loss plus penalty. 
-
-
-	
-\item 	Implement hard margin SVM in primal form using cvxpy. 
-
-
-
-First, randomly shuffle the dataset. Then, Use the first 70\% of the dataset for training and report the test performance on the remaining 30\%.\textbf{[2 marks]}.
-
-\item We will now use active learning to improve the performance of training over the IRIS dataset. We will use the first 10\% of the samples of the shuffled IRIS dataset for training set, and the last 30\% as the test set. The remaining 60\% of the samples will serve as the pool set which we can query to obtain new labeled instances.
-
+\item Implement a function for soft margin SVM in primal form using cvxpy, but formulated as hinge loss plus penalty. \textbf{[1 marks]}
 \begin{enumerate}
-	\item We will retrain our above Gaussian Naive bayes model on the new train set (consisting of 10\% of the samples). As before, we will only be making use of sepal-length and petal-width as the two features. Next, we will do 10 iterations of active learning where we will query on point from the pool set, acquire its labels, add that instance to the train set and remove from the pool set. For each time a new instance is added to the train set, we retrain our model and compute the test accuracy. The querying strategy is to choose the instance with least confidence (Naive Bayes is well suited for this application since it directly gives us the probabilities of different classes given the observed features) \textbf{[3 marks]}
+	\item Could you use Autograd to learn the soft margin SVM when formulated as hinge loss plus penalty? If yes, write the function. If not, explain why? \textbf{[1 marks]}
+	\item  Show the usage of your implementation(s) on the IRIS dataset. For all our experiments, we will only be making use of sepal-length and sepal-width as the two features. We have only two classes - Virginica and Not-Virginica. This problem is not linearly separable.  \textbf{[1 marks]}
+	\item Plot the decision boundary in dark black and the margins in dotted line. Encircle the support vector points. Do you get the same answer as when you use sklearn's SVM?\textbf{[2 marks]}
+	\item This time without using soft-margin SVM, we can still solve the problem using kernels. Use sklearn's functions and RBF kernel with varying gamma and the polynomial kernel with varying degree  on this dataset. As before show the support vectors, margin and separating hyperplane.  What are your observations on the fit with varying gamma and degree?\textbf{[2 marks]}
 	
-	\item Use the \href{https://colab.research.google.com/github/nipunbatra/nipunbatra.github.io/blob/master/blog/2019/active-learning-motivation.ipynb}{notebook shown in the lectures} as a base to show how active learning changes the decision surface (different colours are assigned to the 3 different classes over the 2d space of sepal-length and petal-width) as a function of number of queries. This can be demonstrated via an animation exported as a GIF.  \textbf{[1 mark]}
-	
-	\item Compare the accuracy of the above active learning strategy with random sampling where we query a sample at random from the pool set. Repeat this experiment over 5 different random seeds and make a plot with x-axis showing the number of queries, y-axis shows the accuracy on the test set. There are two lines to show - Naive Bayes with least confidence estimation, and a line showing mean and standard deviation for the random estimate. What can you infer from this plot? \textbf{[2 marks]}
-	
+\end{enumerate}
+\end{enumerate}
 \end{enumerate}
 
-\end{enumerate}
-\end{enumerate}
+
+
+	
+
+
+
 
 
 \end{document}
