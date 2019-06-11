@@ -61,16 +61,14 @@
 </nav>
 			    <div class="container" margin="5%">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Non-negative-matrix-factorization-with-missing-entries-using-CVXPY">Non-negative matrix factorization with missing entries using CVXPY<a class="anchor-link" href="#Non-negative-matrix-factorization-with-missing-entries-using-CVXPY">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Like my <a href="https://nipunbatra.github.io/blog/2017/nmf-nnls.html">previous</a> <a href="https://nipunbatra.github.io/blog/2017/nnmf-tensorflow.html">few</a> <a href="https://nipunbatra.github.io/blog/2017/nmf-autograd.html">posts</a>, in this post I'll illustrate solving non-negative matrix factorization. I'll borrow an <a href="http://nbviewer.jupyter.org/github/cvxgrp/cvxpy/blob/master/examples/notebooks/WWW/nonneg_matrix_fact.ipynb">example</a> provided by <a href="http://www.cvxpy.org/en/latest/">CVXPY</a> and modify it in three ways:</p>
 <ol>
@@ -84,8 +82,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h3>
 </div>
@@ -96,20 +93,19 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">cvxpy</span> <span class="kn">as</span> <span class="nn">cvx</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cvx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Creating-matrix-to-be-decomposed">Creating matrix to be decomposed<a class="anchor-link" href="#Creating-matrix-to-be-decomposed">&#182;</a></h3>
 </div>
@@ -120,19 +116,18 @@
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
                    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Masking-one-entry">Masking one entry<a class="anchor-link" href="#Masking-one-entry">&#182;</a></h3>
 </div>
@@ -143,11 +138,11 @@
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
 <span class="n">A</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -157,16 +152,16 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[ nan,   4.,   5.],
-       [  4.,   4.,   5.],
-       [  5.,   3.,   4.],
-       [  2.,   3.,   3.]], dtype=float32)</pre>
+<pre>array([[nan,  4.,  5.],
+       [ 4.,  4.,  5.],
+       [ 5.,  3.,  4.],
+       [ 2.,  3.,  3.]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -176,8 +171,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Unlike previous posts, I'll directly provide the source code in one go and have comments in the code. We will create two cost functions:</p>
 <ol>
@@ -193,7 +187,7 @@
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">regularisation</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">cost</span><span class="o">=</span><span class="s1">&#39;absolute&#39;</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">regularisation</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">MAX_ITERS</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">cost</span><span class="o">=</span><span class="s1">&#39;absolute&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Parameters</span>
@@ -225,15 +219,15 @@
     <span class="c1"># Perform alternating minimization.</span>
 
     <span class="n">residual</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">MAX_ITERS</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">iter_num</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">MAX_ITERS</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">iter_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">MAX_ITERS</span><span class="p">):</span>
         <span class="c1"># For odd iterations, treat W constant, optimize over H.</span>
         <span class="k">if</span> <span class="n">iter_num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">H</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="n">H</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
             <span class="n">constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">H</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
             
         <span class="c1"># For even iterations, treat X constant, optimize over Y.</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">W</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">W</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
 
             <span class="n">constraint</span> <span class="o">=</span> <span class="p">[</span><span class="n">W</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
            
@@ -241,7 +235,7 @@
         
         <span class="n">one_A</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Constant</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">+</span><span class="mf">1e-3</span><span class="p">))</span>
         <span class="n">abs_error</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">W</span> <span class="o">*</span> <span class="n">H</span><span class="p">)[</span><span class="n">mask</span><span class="p">]</span>
-        <span class="n">rel_error</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">mul_elemwise</span><span class="p">(</span><span class="n">one_A</span><span class="p">,</span> <span class="n">abs_error</span><span class="p">)</span>
+        <span class="n">rel_error</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">one_A</span><span class="p">,</span> <span class="n">abs_error</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">cost</span><span class="o">==</span><span class="s1">&#39;absolute&#39;</span><span class="p">:</span>
             <span class="n">error</span><span class="o">=</span><span class="n">abs_error</span>
         <span class="k">else</span><span class="p">:</span>
@@ -250,13 +244,13 @@
             
         <span class="c1"># Solve the problem.</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">regularisation</span><span class="p">:</span>
-            <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;fro&#39;</span><span class="p">))</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">iter_num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;fro&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">constant</span> <span class="o">*</span> <span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">constant</span> <span class="o">*</span> <span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s1">&#39;fro&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">constant</span> <span class="o">*</span> <span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">))</span>
+                <span class="n">obj</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">constant</span> <span class="o">*</span> <span class="n">cvx</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">))</span>
 
         <span class="n">prob</span> <span class="o">=</span> <span class="n">cvx</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraint</span><span class="p">)</span>
         <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">cvx</span><span class="o">.</span><span class="n">SCS</span><span class="p">)</span>
@@ -273,14 +267,13 @@
     <span class="k">return</span> <span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">residual</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Testing-out-implementation-over-different-parameters">Testing out implementation over different parameters<a class="anchor-link" href="#Testing-out-implementation-over-different-parameters">&#182;</a></h3>
 </div>
@@ -291,10 +284,10 @@
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">cost</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">,</span><span class="s1">&#39;relative&#39;</span><span class="p">]:</span>
     <span class="n">out</span><span class="p">[</span><span class="n">cost</span><span class="p">]</span><span class="o">=</span><span class="p">{}</span>
-    <span class="k">for</span> <span class="n">regularisation</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">regularisation</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]:</span>
         <span class="n">out</span><span class="p">[</span><span class="n">cost</span><span class="p">][</span><span class="n">regularisation</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">constant</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
             <span class="n">W</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">residual</span> <span class="o">=</span> <span class="n">nmf_features</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">,</span> <span class="n">regularisation</span><span class="o">=</span><span class="n">regularisation</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="n">constant</span><span class="p">)</span>
@@ -302,14 +295,13 @@
             
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Using-relative-cost">Using relative cost<a class="anchor-link" href="#Using-relative-cost">&#182;</a></h4>
 </div>
@@ -320,10 +312,10 @@
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;relative&#39;</span><span class="p">][</span><span class="bp">False</span><span class="p">][</span><span class="mf">0.1</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;relative&#39;</span><span class="p">][</span><span class="kc">False</span><span class="p">][</span><span class="mf">0.1</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -333,16 +325,16 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 5.,  4.,  5.],
-        [ 4.,  4.,  5.],
-        [ 5.,  3.,  4.],
-        [ 2.,  3.,  3.]])</pre>
+<pre>array([[5., 4., 5.],
+       [4., 4., 5.],
+       [5., 3., 4.],
+       [2., 3., 3.]])</pre>
 </div>
 
 </div>
@@ -352,8 +344,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Great, looks like we recovered the original matrix pretty much as it is!</p>
 
@@ -361,8 +352,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Using-absolute-cost">Using absolute cost<a class="anchor-link" href="#Using-absolute-cost">&#182;</a></h4>
 </div>
@@ -373,10 +363,10 @@
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="bp">False</span><span class="p">][</span><span class="mf">0.1</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="kc">False</span><span class="p">][</span><span class="mf">0.1</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -386,16 +376,16 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 5.,  4.,  5.],
-        [ 4.,  4.,  5.],
-        [ 5.,  3.,  4.],
-        [ 2.,  3.,  3.]])</pre>
+<pre>array([[5., 4., 5.],
+       [4., 4., 5.],
+       [5., 3., 4.],
+       [2., 3., 3.]])</pre>
 </div>
 
 </div>
@@ -405,8 +395,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, looks like we recovered the original matrix pretty much as it is!</p>
 
@@ -414,8 +403,7 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Using-regularisation">Using regularisation<a class="anchor-link" href="#Using-regularisation">&#182;</a></h4>
 </div>
@@ -426,10 +414,10 @@
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="bp">True</span><span class="p">][</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="kc">True</span><span class="p">][</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;pred&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -439,16 +427,16 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 0.,  0.,  0.],
-        [ 0.,  0.,  0.],
-        [ 0.,  0.,  0.],
-        [ 0.,  0.,  0.]])</pre>
+<pre>array([[ 0.,  0.,  0.],
+       [ 0.,  0., -0.],
+       [-0., -0., -0.],
+       [ 0.,  0.,  0.]])</pre>
 </div>
 
 </div>
@@ -458,8 +446,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Woah. All 0s. Maybe this is due to the high coefficient of regularisation!</p>
 
@@ -471,10 +458,10 @@
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="bp">True</span><span class="p">][</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">][</span><span class="kc">True</span><span class="p">][</span><span class="mi">10</span><span class="p">][</span><span class="s1">&#39;H&#39;</span><span class="p">]</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -484,14 +471,14 @@
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>matrix([[ 0.,  0.,  0.],
-        [ 0.,  0.,  0.]])</pre>
+<pre>array([[1.01026957e-12, 7.54581974e-13, 2.96696823e-13],
+       [4.94605437e-13, 4.77871560e-13, 7.69703255e-13]])</pre>
 </div>
 
 </div>
@@ -501,8 +488,7 @@
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Yes, this is indeed the case!</p>
 
