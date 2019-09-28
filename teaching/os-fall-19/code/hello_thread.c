@@ -4,7 +4,7 @@
 
 
 void *our_thread(void *arg){
-	printf("Started %d\n", (int) arg);
+	printf("Started %d. My ID: %d\n", (int) arg, getpid());
 	sleep(2);
 	return NULL;
 	}
